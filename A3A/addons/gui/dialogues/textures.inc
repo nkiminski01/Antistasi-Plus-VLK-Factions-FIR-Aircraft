@@ -111,6 +111,7 @@ Maintainer: DoomMetal
 #define A3A_Icon_Refuel             "\a3\ui_f\data\igui\cfg\actions\refuel_ca.paa"
 #define A3A_Icon_Light              "\a3\ui_f\data\igui\cfg\actions\ico_cpt_land_on_ca.paa"
 #define A3A_Icon_Gear               "\a3\ui_f\data\igui\cfg\actions\gear_ca.paa"
+#define A3A_Icon_Repair             "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa"
 #define A3A_Icon_Box                "\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa"
 #define A3A_Icon_HealKit            "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_background_tablet_button_revive02_ca.paa"
 
