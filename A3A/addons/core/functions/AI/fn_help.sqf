@@ -1,238 +1,157 @@
-params ["_treatedUnit", "_medic"];
 
-if !(isNull (_treatedUnit getVariable ["helped",objNull])) exitWith {};
-if (isPlayer _medic) exitWith {};
-if (_medic getVariable ["helping",false]) exitWith {};
+// Just for debugging probably
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
-_treatedUnit setVariable ["helped",_medic];
-_medic setVariable ["helping",true];
-_medic setVariable ["maneuvering",true];
+// Both units must be local. Non-local unit might be resolved at some point.
 
-private _isCured = false;
-private _hasPlayer = if ((units group _treatedUnit) findIf {isPlayer _x} != -1) then {true} else {false};
+params ["_unit", "_medicX"];
 
-if (_medic != _treatedUnit) then {
-	if !(_treatedUnit getVariable ["incapacitated",false]) then {
-		if (_hasPlayer) then {_treatedUnit groupChat format [localize "STR_chats_help_ask", name _treatedUnit]};
-		playSound3D [(selectRandom injuredSounds),_treatedUnit,false, getPosASL _treatedUnit, 1, 1, 50];
-	};
+// Probably none of these should happen, but whatever
+if !(isNull (_unit getVariable ["helped",objNull])) exitWith {};
+if (isPlayer _medicX) exitWith {};
+if (_medicX getVariable ["helping",false]) exitWith {};
 
-	if (_hasPlayer) then {
-		[_medic,_treatedUnit] spawn {
-			sleep 2;
-			private ["_medic","_treatedUnit"];
-			_medic = _this select 0;
-			_treatedUnit = _this select 1;
-			_medic groupChat format [localize "STR_chats_help_response",name _treatedUnit]
-		};
-	};
+_unit setVariable ["helped",_medicX];
+_medicX setVariable ["helping",true];
+_medicX setVariable ["maneuvering",true];
 
-	if (hasInterface && {player == _treatedUnit}) then {
-		[localize "STR_chats_help_notification_header", format [localize "STR_chats_help_notification_desc", name _medic]] call A3A_fnc_customHint;
-	};
+private _cured = false;
+private _isPlayerGroup = if ({isPlayer _x} count units _unit > 0) then {true} else {false};
 
-	private _enemy = _medic findNearestEnemy _treatedUnit;
-	if ((random 100) < 50) then {
-		[_medic,_treatedUnit,_enemy] call A3A_fnc_chargeWithSmoke;
-	};
-
-	_medic stop false;
-	_medic forceSpeed -1;
-	private _timeOut = time + 60;
-	sleep 5;
-	_medic doMove getPosATL _treatedUnit;
-	while {true} do {
-		sleep 1;
-		if (!([_medic] call A3A_fnc_canFight) or 
-			(!alive _treatedUnit) or 
-			(unitReady _medic) or 
-			(_medic distance _treatedUnit <= 3) or 
-			(_timeOut < time) or 
-			(_treatedUnit != vehicle _treatedUnit) or 
-			(_medic != vehicle _medic) or 
-			(_medic != _treatedUnit getVariable ["helped",objNull]) or 
-			!(isNull attachedTo _treatedUnit) or 
-			(_medic getVariable ["cancelRevive",false]) or 
-			(_treatedUnit getVariable ["A3A_blockRevive",false])
-		) exitWith {};
-	};
-
-	if ((_treatedUnit distance _medic <= 3)
-		&& !(_treatedUnit getVariable ["A3A_blockRevive",false])
-		&& (alive _treatedUnit)
-		&& ([_medic] call A3A_fnc_canFight)
-		&& (_medic == vehicle _medic)
-		&& (_medic == _treatedUnit getVariable ["helped",objNull])
-		&& (isNull attachedTo _treatedUnit)
-		&& !(_medic getVariable ["cancelRevive",false])) then {
-
-		if (_treatedUnit getVariable ["incapacitated",false] &&
-			!isNull _enemy &&
-			_timeOut >= time &&
-			_medic != _treatedUnit
-		) then {
-			private _coverX = [_treatedUnit,_enemy] call A3A_fnc_coverage;
-
-			{
-				if (([_x] call A3A_fnc_canFight) && (_x distance _medic < 50) && !(_x getVariable ["helping",false]) && (!isPlayer _x)) then {[_x,_enemy] call A3A_fnc_suppressingFire}
-			} forEach units (group _medic);
-			if (count _coverX == 3) then {
-				_medic setUnitPos "MIDDLE";
-				_medic playAction "grabDrag";
-				sleep 0.1;
-				_timeOut = time + 5;
-
-				waitUntil {
-					sleep 0.3;
-					((animationState _medic) == "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2")
-					|| ((animationState _medic) == "AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_2")
-					|| !([_medic] call A3A_fnc_canFight)
-					|| (_timeOut < time)
-				};
-
-				if ([_medic] call A3A_fnc_canFight) then {
-					[_treatedUnit,"AinjPpneMrunSnonWnonDb"] remoteExec ["switchMove"];
-					_medic disableAI "ANIM";
-					_medic stop false;
-					private _dummyGrp = createGroup civilian;
-					private _dummy = [_dummyGrp, "C_man_polo_1_F", [0,0,20], [], 0, "FORM"] call A3A_fnc_createUnit;
-					_dummy setUnitPos "MIDDLE";
-					_dummy forceWalk true;
-					_dummy setSkill 0;
-					[_dummy,true] remoteExec ["hideObjectGlobal",2];
-					_dummy allowdammage false;
-					_dummy setBehaviour "CARELESS";
-					_dummy disableAI "FSM";
-					_dummy disableAI "SUPPRESSION";
-				    _dummy forceSpeed 0.2;
-				    _dummy setPosATL (getPosATL _medic);
-					_medic attachTo [_dummy, [0, -0.2, 0]];
-					_medic setDir 180;
-
-					_treatedUnit attachTo [_dummy, [0,-1.1, 0.092]];
-					_treatedUnit setDir 0;
-					_dummy doMove _coverX;
-					// [_medic] spawn {sleep 4.5; (_this select 0) playMove "AcinPknlMwlkSrasWrflDb"};
-					_timeOut = time + 30;
-					while {true} do {
-						sleep 0.2;
-						if (!([_medic] call A3A_fnc_canFight)
-							|| (!alive _treatedUnit)
-							|| (_medic distance _coverX <= 2)
-							|| (_timeOut < time)
-							|| (_medic != vehicle _medic)
-							|| (_medic getVariable ["cancelRevive",false])
-							|| (_treatedUnit getVariable ["A3A_blockRevive",false])
-						) exitWith {};
-
-						if (_treatedUnit distance _dummy > 3) then {
-							detach _treatedUnit;
-							_treatedUnit setPos (position _dummy);
-							_treatedUnit attachTo [_dummy, [0,-1.1, 0.092]];
-							_treatedUnit setDir 0;
-						};
-						if (_medic distance _dummy > 3) then {
-							detach _medic;
-							_medic setPos (position _dummy);
-							_medic attachTo [_dummy, [0, -0.2, 0]];
-							_medic setDir 180;
-						};
-					};
-					detach _treatedUnit;
-					detach _medic;
-					detach _dummy;
-					deleteVehicle _dummy;
-					deleteGroup _dummyGrp;
-					_medic enableAI "ANIM";
-				};
-
-				if ((alive _treatedUnit) 
-					&& ([_medic] call A3A_fnc_canFight) 
-					&& (_medic == vehicle _medic) 
-					&& !(_medic getVariable ["cancelRevive",false])
-					&& !(_treatedUnit getVariable ["A3A_blockRevive",false])
-				) then {
-					_medic playMove "amovpknlmstpsraswrfldnon";
-					_medic stop true;
-					_treatedUnit stop true;
-					sleep 3;
-					_isCured = [_treatedUnit,_medic] call A3A_fnc_actionRevive;
-					_treatedUnit playMoveNow "";
-					if (_isCured) then
-						{
-						if (_medic != _treatedUnit) then {if (_hasPlayer) then {_medic groupChat format [localize "STR_chats_help_success",name _treatedUnit]}};
-						};
-					sleep 5;
-					_medic stop false;
-					_treatedUnit stop false;
-					_treatedUnit dofollow leader group _treatedUnit;
-					_medic doFollow leader group _treatedUnit;
-				} else {
-					[_medic,""] remoteExec ["switchMove"];
-					if ((alive _treatedUnit) && (_treatedUnit getVariable ["incapacitated",false])) then {
-						_treatedUnit playMoveNow "";
-						_treatedUnit setUnconscious false;
-						_timeOut = time + 3;
-						waitUntil {sleep 0.3; (lifeState _treatedUnit != "incapacitated") || (_timeOut < time)};
-						_treatedUnit setUnconscious true;
-					};
-				};
-			}
-			else {
-				_medic stop true;
-				_treatedUnit stop true;
-				_isCured = [_treatedUnit,_medic] call A3A_fnc_actionRevive;
-				if (_isCured) then {
-					if (_medic != _treatedUnit) then {if (_hasPlayer) then {_medic groupChat format [localize "STR_chats_help_success",name _treatedUnit]}};
-					sleep 10;
-				};
-				_medic stop false;
-				_treatedUnit stop false;
-				_treatedUnit dofollow leader group _treatedUnit;
-				_medic doFollow leader group _treatedUnit;
-			};
-			if ((animationState _medic == "amovpknlmstpsraswrfldnon") || (animationState _medic == "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2") || (animationState _medic == "AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_2")) then {_medic switchMove ""};
-		} else {
-			_medic stop true;
-			_treatedUnit stop true;
-			if (_treatedUnit getVariable ["incapacitated",false]) then {_isCured = [_treatedUnit,_medic] call A3A_fnc_actionRevive} else {_medic action ["HealSoldier",_treatedUnit]; _isCured = true};
-			if (_isCured) then {
-				if (_medic != _treatedUnit) then {if (_hasPlayer) then {_medic groupChat format [localize "STR_chats_help_success",name _treatedUnit]}};
-				sleep 10;
-			};
-			_medic stop false;
-			_treatedUnit stop false;
-			_treatedUnit dofollow leader group _treatedUnit;
-			_medic doFollow leader group _treatedUnit;
-		};
-	};
-	if (_medic == _treatedUnit getVariable ["helped",objNull]) then {
-		_treatedUnit setVariable ["helped",objNull]
-	};
-	_medic setUnitPos "AUTO";
-
-	if (_medic getVariable ["cancelRevive",false]) then {
-		_medic stop false;
-		_medic doFollow leader group _treatedUnit;
-		sleep 15;
-	};
-} else {
-	if ((random 100) < 50) then {
-		[_medic,_medic] call A3A_fnc_chargeWithSmoke;
-	};
-	if ([_medic] call A3A_fnc_canFight) then {
-		_medic action ["HealSoldierSelf",_medic];
-		sleep 10;
-	};
-	_treatedUnit setVariable ["helped",objNull];
-	_isCured = true;
-};
-if (_medic getVariable ["cancelRevive",false]) then {
-	_medic setVariable ["cancelRevive",false];
-	sleep 15;
+private _fnc_canHelp = {
+    params ["_medic", "_target"];
+    (alive _target)
+    and (_medic call A3A_fnc_canFight)
+    and (isNull objectParent _medic)
+    and (_medic == _target getVariable ["helped",objNull])			// is assigned helper
+    and (isNull attachedTo _target)									// target not dragged or loaded into vehicle
+    and !(_medicX getVariable ["cancelRevive",false])				// revive not cancelled (due to medic damage?)
 };
 
-_medic setVariable ["helping",false];
-_medic setVariable ["maneuvering",false];
+private _fnc_doHeal = {
+    params ["_medic", "_target"];
+    _medic stop true;
+    _target stop true;
+    private _cured = if (_target getVariable ["incapacitated",false]) then { 
+        [_target,_medic] call A3A_fnc_actionRevive;
+    } else {
+        _medic action ["HealSoldier",_unit];
+        sleep 10; true;
+    };
+    if (_cured && _medic != _target && _isPlayerGroup) then {
+        _medic groupChat format ["You are ready %1",name _target];
+    };
+    _medic stop false;
+    _target stop false;
+    _target doFollow leader _target;
+    _medic doFollow leader _medic;
+    _cured;
+};
 
-_isCured
+if (_medicX != _unit) then
+{
+    // Is this one even used? Never seen it
+    if !(_unit getVariable ["incapacitated",false]) then
+    {
+        if (_isPlayerGroup) then {_unit groupChat format ["Comrades, this is %1. I'm hurt!", name _unit]};
+        playSound3D [(selectRandom injuredSounds),_unit,false, getPosASL _unit, 1, 1, 50];
+    };
+
+    // Fire helping message if in player group
+    if (_isPlayerGroup) then {
+        _medicX groupChat format ["Wait a minute comrade %1, I will patch you up.", name _unit]
+    };
+
+    // Actual helping hint for player
+    if (player == _unit) then {
+        ["Medical", format ["%1 is on the way to help you.", name _medicX]] call A3A_fnc_customHint;
+    };
+
+    Debug_2("Medic %1 helping %2", _medicX, _unit);
+
+    // Smoke target vs nearest enemy
+    private _enemy = _medicX findNearestEnemy _unit;
+    if ((_unit getVariable ["incapacitated", false]) and (!isNull _enemy)) then
+    {
+        [_medicX,_unit,_enemy] call A3A_fnc_chargeWithSmoke;
+
+        // Get some smoke/suppression help from nearby AI squadmates.
+        private _nearFriends = units _medicX select { (_x != _medicX) and (_x call A3A_fnc_canFight) and (_x distance _unit < 50) and !(_x getVariable ["helping",false]) and (!isPlayer _x) };
+        {
+            if (random 100 > 40) then { continue };
+            if (random 100 > 60) then {
+                [selectRandom _nearFriends, _unit, _enemy] spawn A3A_fnc_chargeWithSmoke;
+            } else {
+                [selectRandom _nearFriends, _enemy] spawn A3A_fnc_suppressingFire;
+            };
+        } forEach _nearFriends;
+    };
+
+    Debug_1("Medic %1 moving to target", _medicX);
+
+    // Attempt to move to target
+    _medicX stop false;
+    _medicX forceSpeed -1;				// Not sure what this is cleaning up exactly, but whatever
+    _medicX doMove getPosATL _unit;
+    _timeOut = time + 60;
+    waitUntil { sleep 1; !([_medicX, _unit] call _fnc_canHelp) or (unitReady _medicX) or (_medicX distance _unit <= 2) or (time > _timeOut) };
+
+    // Couldn't get close enough or abandoned for some reason
+    if (!([_medicX, _unit] call _fnc_canHelp) or (_unit distance _medicX > 3)) exitWith {
+        private _canHelp = [_medicX, _unit] call _fnc_canHelp;
+        Debug_4("Medic %1 abandoned at distance %2, ready %3, canHelp %4", _medicX, _unit distance _medicX, unitReady _medicX, _canHelp);
+
+        if (_unit getVariable ["incapacitated", false]) then {
+            private _failCount = _unit getVariable ["helpFailed", 0];
+            _unit setVariable ["helpFailed", _failCount + 1];
+        };
+    };
+
+    // Unit incapped and enemy exists, order suppressing fire and drag to cover if appropriate
+    if ((_unit getVariable ["incapacitated",false]) and (!isNull _enemy)) then
+    {
+        // Drag if there's better cover nearby
+        _coverX = [_unit,_enemy] call A3A_fnc_coverage;
+        if (count _coverX == 3) then {
+            Debug_1("Medic %1 dragging target", _medicX);
+            [_medicX, _unit, _coverX] call A3A_fnc_AIdrag;
+        };
+    };
+
+    Debug_1("Medic %1 healing target", _medicX);
+
+    if ([_medicX, _unit] call _fnc_canHelp) then {
+        _cured = [_medicX, _unit] call _fnc_doHeal;
+    };
+}
+else
+{
+    // Self-heal + smoke stuff
+    [_medicX,_medicX] call A3A_fnc_chargeWithSmoke;
+    if ([_medicX] call A3A_fnc_canFight) then
+    {
+        _medicX action ["HealSoldierSelf",_medicX];
+        sleep 10;
+    };
+    _medicX setVariable ["helped",objNull];
+    _cured = true;
+};
+
+// Some sort of hacky attempt to clear stuck animations or what?
+//if ((animationState _medicX == "amovpknlmstpsraswrfldnon") or (animationState _medicX == "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2") or (animationState _medicX == "AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_2")) then {_medicX switchMove ""};
+
+_medicX setUnitPos "AUTO";
+_medicX doFollow leader _unit;
+
+if (_medicX == _unit getVariable ["helped",objNull]) then { _unit setVariable ["helped",objNull,true] };
+
+_medicX setVariable ["helping",false];
+_medicX setVariable ["maneuvering",false];
+
+if (_medicX getVariable ["cancelRevive",false]) then {
+    _medicX setVariable ["cancelRevive",false];
+    sleep 15;			// don't give other orders for a bit? Why not?
+};
+
+_cured			// probably doesn't matter, function is always spawned?

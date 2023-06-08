@@ -47,104 +47,46 @@ if(_group getVariable ["A3A_canCallSupportAt", -1] < time) then {
     [_group, _killer] spawn A3A_fnc_callForSupportInfantry;
 };
 
+// Call for Local battery support.
+if (PATCOM_ARTILLERY_MANAGER) then {
+    [getPos _killer, (random 150), "HE", (round (1 + tierWar / 2)), _group] call A3A_fnc_artilleryFireMission;
+};
+
 if (!fleeing leader _group and random 1 < 0.5) then
 {
     private _courage = leader _group skill "courage";
     _group allowFleeing (2 - _courage - count _activeGroupMembers / count units _group);
 };
 
+if (!fleeing leader _group and random 1 < 0.5) then
 {
-    if (fleeing _x) then
-	{
-        if (_x call A3A_fnc_canFight) then
-		{
-            private _enemy = _x findNearestEnemy _x;
-            if (!isNull _enemy) then
-			{
-                if ((_x distance _enemy < 50) && {vehicle _x == _x}) then
-				{
-                    private _fleeChance = switch (true) do {
-                        case (_x getVariable ["isRival", false]): {
-                            random 25
-                        };
-                        case (side _x == Occupants): {
-                            sqrt aggressionOccupants * 2
-                        };
-                        default {
-                            sqrt aggressionInvaders * 2
-                        };
-                    };
+    private _courage = leader _group skill "courage";
+    _group allowFleeing (2 - _courage - count _activeGroupMembers / count units _group);
+};
 
-                    if (_fleeChance < 8) then {
-                        _fleeChance = 8;
-                    } else {
-                        if (_fleeChance > 25) then {
-                            _fleeChance = 25;
-                        };
-                    };
+if (_group getVariable ["A3A_reactingToKill", false]) exitWith {};      // don't spam this loop
+_group setVariable ["A3A_reactingToKill", true];
 
-                    if ((random 100) < _fleeChance) then {
-                        [_x] spawn SCRT_fnc_common_panicFlee;
-                    } else {
-                        [_x] spawn A3A_fnc_surrenderAction;
-                    };
-				}
-                else
-				{
-                    if (([primaryWeapon _x] call BIS_fnc_baseWeapon) in allMachineGuns) then
-                    {
-                        [_x,_enemy] call A3A_fnc_suppressingFire
-                    }
-                    else
-                    {
-                        if ((random 100) < 35) then {
-                            [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke
-                        };
-                    };
-				};
-			};
-		};
-	}
-    else
-	{
-        if (_x call A3A_fnc_canFight) then
-		{
-            //check if there is at least one soldier in squad without NVG
-            private _squad = units _group;
-            private _noNvgIndex = _squad findIf {hmd _x == "" || {getArray (configFile >> "CfgWeapons" >> (hmd _x) >> "visionMode") isEqualTo ["Normal","Normal"]}};
+{
+    if !(_x call A3A_fnc_canFight) then { continue };
+    private _enemy = _x findNearestEnemy _x;
 
-            _enemy = _x findNearestEnemy _x;
-            if (!isNull _enemy) then
-			{
-                //machinegunner will suppress
-                if (([primaryWeapon _x] call BIS_fnc_baseWeapon) in allMachineGuns) then {
-                    [_x,_enemy] call A3A_fnc_suppressingFire;
-                }
-                else {
-                    //ordinary soldier will throw smoke
-                    if (sunOrMoon == 1) then {
-                        if ((random 100) < 35) then {
-                            [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke;
-                        };
-                    } else {
-                        //soldier with underbarrel launcher will launch flare if there is someone in his squad without NVG goggles, else smoke
-                        if (_noNvgIndex != -1 && {count (getArray (configfile >> "CfgWeapons" >> primaryWeapon _x >> "muzzles")) == 2}) then {
-                            [_x, side (group _x), _enemy] spawn A3A_fnc_useFlares;
-                        } else {
-                            if ((random 100) < 35) then {
-                                [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke;
-                            };
-                        };
-					};
-				};
-			}
-            else {
-                //if there is not a day, there are people in squad without NVG goggles and there are underbarrel launcher, then flares
-               if ((sunOrMoon <1) && _noNvgIndex != -1 && count (getArray (configfile >> "CfgWeapons" >> primaryWeapon _x >> "muzzles")) == 2) then {
-                    [_x, side (group _x)] spawn A3A_fnc_useFlares;
-				};
-			};
-		};
+    call {
+        if (fleeing _x && {!isNull _enemy && (_x distance _enemy < 50) && (vehicle _x == _x)} ) exitWith {
+            [_x] spawn A3A_fnc_surrenderAction;
+        };
+        if (_x getVariable ["helping", false]) exitWith {};
+        if (!isNull _enemy && (primaryWeapon _x in allMachineGuns)) exitWith {
+            if (random 100 < 40) then { [_x,_enemy] spawn A3A_fnc_suppressingFire };
+        };
+        if (sunOrMoon == 1 || haveNV) exitWith {
+            if (random 100 < 40) then { [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke };
+        };
+        if (primaryWeapon _x in allGrenadeLaunchers) exitWith {
+            [_x,_enemy] spawn A3A_fnc_useFlares;
+        };
 	};
     sleep (1 + random 1);
 } forEach _activeGroupMembers;
+
+_group setVariable ["A3A_reactingToKill", nil];
