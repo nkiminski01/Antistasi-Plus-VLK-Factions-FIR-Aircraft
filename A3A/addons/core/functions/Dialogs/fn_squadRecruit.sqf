@@ -52,7 +52,7 @@ _costs = 2*_crewCost + ([FactionGet(reb,"vehicleAT")] call A3A_fnc_vehiclePrice)
 (_display displayCtrl 109) ctrlSetTooltip format [localize "STR_dialog_cost_hire",_costs,_costHR, A3A_faction_civ get "currencySymbol"];
 
 _costHR = 2;
-_costs = 2*_crewCost + ([FactionGet(reb,"vehicleTruck")] call A3A_fnc_vehiclePrice) + ([FactionGet(reb,"staticAA")] call A3A_fnc_vehiclePrice);
+_costs = 2*_crewCost + ([FactionGet(reb,"vehicleTruck")] call A3A_fnc_vehiclePrice) + ([FactionGet(reb,"AIstaticAA")] call A3A_fnc_vehiclePrice);
 (_display displayCtrl 110) ctrlSetTooltip format [localize "STR_dialog_cost_hire",_costs,_costHR, A3A_faction_civ get "currencySymbol"];
 
 _costHR = 2;

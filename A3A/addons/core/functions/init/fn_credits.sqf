@@ -5,9 +5,10 @@ FIX_LINE_NUMBERS()
 #define DURATION 4
 
 private _credits = [
-	[ (call SCRT_fnc_misc_getMissionTitle), [QUOTE(VERSION)], "<img image='Pictures\Mission\logo.paa' size='1.6' />"],
-	[ (localize "STR_antistasi_credits_authors_plus"), ["Socrates"]],
-	[ (localize "STR_antistasi_credits_authors"), ["Barbolani","Official Antistasi Community"]]
+	[ (call SCRT_fnc_misc_getMissionTitle), [QUOTE(VERSION)], "<img image='\vlkpictures\datapack\VLK_Mod_Logo.paa' size='1.6' />"],
+	[ (localize "STR_antistasi_credits_authors_plus"), ["VELKA"]],
+	[ (localize "STR_antistasi_credits_special"), ["pomikrus","Mylyasha","Mirage","Weert1s","Captus"]]
+	
 ];
 
 if ("coldWar" in A3A_factionEquipFlags) then {
