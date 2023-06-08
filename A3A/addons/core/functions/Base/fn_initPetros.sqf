@@ -7,7 +7,7 @@ petros setSkill 1;
 petros setVariable ["respawning",false];
 petros allowDamage false;
 
-[petros, "GreekHead_A3_01", "Male01GRE", 1.1, "Petros"] call A3A_fnc_setIdentity;
+[petros, "WhiteHead_06", "Male03ENG", 1.0, "Field Commander"] call A3A_fnc_setIdentity;
 
 removeHeadgear petros;
 removeGoggles petros;

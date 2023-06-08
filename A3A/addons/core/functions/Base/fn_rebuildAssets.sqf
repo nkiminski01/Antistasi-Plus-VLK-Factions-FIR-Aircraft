@@ -66,4 +66,4 @@ switch (true) do {
 	};
 };
 
-[0,-5000] remoteExec ["A3A_fnc_resourcesFIA",2];
+[0,-rebuildAssets] remoteExec ["A3A_fnc_resourcesFIA",2];
