@@ -151,6 +151,15 @@
                 <Spanish>Administrador</Spanish>
                 <Polish>Admin</Polish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_buy_vehicle_med_tooltip">
+        <Original>This item has medical capability</Original>
+      </Key>
+      <Key ID="STR_antistasi_dialogs_buy_vehicle_ammo_tooltip">
+        <Original>This item can rearm other vehicles</Original>
+      </Key>
+      <Key ID="STR_antistasi_dialogs_buy_vehicle_repair_tooltip">
+        <Original>This item can repair other vehicles</Original>
+      </Key>
             <Key ID="STR_antistasi_dialogs_main_commander_tab_disabled_tooltip">
                 <Original>Only the commander can access the commander tab</Original>
                 <French>Seul le commandant peut accéder à l'onglet commandant</French>
@@ -619,6 +628,15 @@
                 <Original>Vehicles</Original>
                 <Chinesesimp>载具</Chinesesimp>
                 <Korean>차량</Korean>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_tab_civ">
+                <Original>Civilian</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_tab_reb">
+                <Original>Rebel</Original>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_tab_static">
+            <Original>Statics</Original>
             </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_other">
                 <Original>Other</Original>
