@@ -26,7 +26,7 @@ if (_typeGroup in [FactionGet(reb,"staticMG"), FactionGet(reb,"vehicleLightArmed
 	[localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_reinf_addFIASquadHC_error_MG_restr"] call SCRT_fnc_misc_deniedHint;
 };
 
-if (_typeGroup in [FactionGet(reb,"groupSquadSupp"), FactionGet(reb,"staticAT"), FactionGet(reb,"staticAA"), FactionGet(reb,"vehicleAT"), FactionGet(reb,"vehicleAA")] && {tierWar < 4}) exitWith {
+if (_typeGroup in [FactionGet(reb,"groupSquadSupp"), FactionGet(reb,"AIstaticAT"), FactionGet(reb,"AIstaticAA"), FactionGet(reb,"vehicleAT"), FactionGet(reb,"vehicleAA")] && {tierWar < 4}) exitWith {
 	[localize "STR_A3A_reinf_addFIASquadHC_header", localize "STR_A3A_reinf_addFIASquadHC_error_ATAA_restr"] call SCRT_fnc_misc_deniedHint;
 };
 
@@ -55,7 +55,7 @@ if (_typeGroup isEqualType []) then {
 } else {
     private _typeCrew = FactionGet(reb,"unitCrew");
 	_costs = 2*(server getVariable _typeCrew) + ([_typeGroup] call A3A_fnc_vehiclePrice);
-	if (_typeGroup == FactionGet(reb,"staticAA")) then { _costs = _costs + ([FactionGet(reb,"vehicleTruck")] call A3A_fnc_vehiclePrice) };
+	if (_typeGroup == FactionGet(reb,"AIstaticAA")) then { _costs = _costs + ([FactionGet(reb,"vehicleTruck")] call A3A_fnc_vehiclePrice) };
     _formatX = [_typeCrew, _typeCrew];
 	_costHR = 2;
 
@@ -70,8 +70,8 @@ if (_exit) exitWith {};
 
 private _mounts = [];
 private _vehType = switch true do {
-    case (!_isInfantry && {_typeGroup isEqualTo FactionGet(reb,"staticAA")}): {
-        if (FactionGet(reb,"vehicleAA") isEqualTo "") exitWith {_mounts pushBack [FactionGet(reb,"staticAA"),-1,[[1],[],[]]]; FactionGet(reb,"vehicleTruck")};
+    case (!_isInfantry && {_typeGroup isEqualTo FactionGet(reb,"AIstaticAA")}): {
+        if (FactionGet(reb,"vehicleAA") isEqualTo "") exitWith {_mounts pushBack [FactionGet(reb,"AIstaticAA"),-1,[[1],[],[]]]; FactionGet(reb,"vehicleTruck")};
         FactionGet(reb,"vehicleAA")
     };
     case (!_isInfantry): {_typeGroup};
@@ -89,7 +89,7 @@ private _idFormat = switch _typeGroup do {
     case FactionGet(reb,"staticMG"): {"MG-"};
     case FactionGet(reb,"vehicleAT"): {"M.AT-"};
     case FactionGet(reb,"vehicleLightArmed"): {"M.MG-"};
-    case FactionGet(reb,"staticAA"): {"M.AA-"};
+    case FactionGet(reb,"AIstaticAA"): {"M.AA-"};
     default {
         switch _withBackpck do {
             case "MG": {"SqMG-"};
@@ -113,7 +113,7 @@ private _vehiclePlacementMethod = if (getMarkerPos respawnTeamPlayer distance pl
         private _vehicle = _vehType createVehicle _spawnPos;
 
         if (_mounts isNotEqualTo []) then {
-            private _static = FactionGet(reb,"staticAA") createVehicle _spawnPos;
+            private _static = FactionGet(reb,"AIstaticAA") createVehicle _spawnPos;
             private _nodes = [_vehicle, _static] call A3A_Logistics_fnc_canLoad;
             if (_nodes isEqualType 0) exitWith {};
             (_nodes + [true]) call A3A_Logistics_fnc_load;

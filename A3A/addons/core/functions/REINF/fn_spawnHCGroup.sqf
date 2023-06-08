@@ -87,12 +87,12 @@ switch _special do {
 
     //vehicle squad
     case "BuildAA": {
-        private _static = ((attachedObjects _vehicle) select {typeOf _x == FactionGet(reb,"staticAA")})#0;
+        private _static = ((attachedObjects _vehicle) select {typeOf _x == FactionGet(reb,"AIstaticAA")})#0;
         (_units # (_countUnits -1)) moveInDriver _vehicle;
         (_units # _countUnits) moveInGunner _static;
         call _initVeh;
         _vehicle allowCrewInImmobile true;
-        _cost = _cost + ([FactionGet(reb,"staticAA")] call A3A_fnc_vehiclePrice);
+        _cost = _cost + ([FactionGet(reb,"AIstaticAA")] call A3A_fnc_vehiclePrice);
     };
     case "VehicleSquad": {
         (_units # (_countUnits -1)) moveInDriver _vehicle;
