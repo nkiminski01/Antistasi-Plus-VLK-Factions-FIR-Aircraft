@@ -8,7 +8,7 @@ if (!isServer and hasInterface) exitWith {};
 private _positionX = getMarkerPos _markerX;
 private _garrison = garrison getVariable [_markerX, []];
 
-private _aaClass = A3A_faction_reb get "staticAA";
+private _aaClass = A3A_faction_reb get "AIstaticAA";
 
 private _props = [];
 
