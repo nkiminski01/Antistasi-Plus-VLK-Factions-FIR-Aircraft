@@ -4,35 +4,35 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 //   Rebel Information   //
 ///////////////////////////
 
-["name", "NAPA"] call _fnc_saveToTemplate; 						
+["name", "DRG VSRF"] call _fnc_saveToTemplate; 						
 
-["flag", "Flag_EAF_F"] call _fnc_saveToTemplate;
-["flagTexture", "\a3\Data_F_Enoch\Flags\flag_EAF_CO.paa"] call _fnc_saveToTemplate;
-["flagMarkerType", "flag_EAF"] call _fnc_saveToTemplate;
+["flag", "rhs_Flag_Russia_F"] call _fnc_saveToTemplate;
+["flagTexture", "rhsafrf\addons\rhs_main\data\flag_rus_co.paa"] call _fnc_saveToTemplate;
+["flagMarkerType", "flag_Russia"] call _fnc_saveToTemplate;
 
-["vehicleBasic", "I_G_Quadbike_01_F"] call _fnc_saveToTemplate;
-["vehicleLightUnarmed", "rhsgref_nat_uaz_open"] call _fnc_saveToTemplate;
+["vehicleBasic", "UK3CB_CHC_C_TT650"] call _fnc_saveToTemplate;
+["vehicleLightUnarmed", "RHS_UAZ_MSV_01"] call _fnc_saveToTemplate;
 ["vehicleLightArmed", "rhsgref_nat_uaz_dshkm"] call _fnc_saveToTemplate;
-["vehicleTruck", "rhsgref_nat_ural_open"] call _fnc_saveToTemplate;
+["vehicleTruck", "rhs_kamaz5350_msv"] call _fnc_saveToTemplate;
 ["vehicleAT", "rhsgref_nat_uaz_spg9"] call _fnc_saveToTemplate;
-["vehicleAA", "rhsgref_nat_ural_Zu23"] call _fnc_saveToTemplate;
+["vehicleAA", "rhs_gaz66_zu23_msv"] call _fnc_saveToTemplate;
 
-["vehicleBoat", "I_C_Boat_Transport_02_F"] call _fnc_saveToTemplate;
-["vehicleRepair", "rhsgref_cdf_ural_repair"] call _fnc_saveToTemplate;
+["vehicleBoat", "B_Boat_Armed_01_minigun_F"] call _fnc_saveToTemplate;
+["vehicleRepair", "RHS_Ural_Repair_MSV_01"] call _fnc_saveToTemplate;
 
 ["vehiclePlane", "RHS_AN2"] call _fnc_saveToTemplate;
 ["vehiclePayloadPlane", "I_C_Plane_Civil_01_F"] call _fnc_saveToTemplate;
 
-["vehicleCivCar", "C_Offroad_01_F"] call _fnc_saveToTemplate;
-["vehicleCivTruck", "RHS_Ural_Open_Civ_03"] call _fnc_saveToTemplate;
-["vehicleCivHeli", "RHS_Mi8t_civilian"] call _fnc_saveToTemplate;
-["vehicleCivBoat", "C_Rubberboat"] call _fnc_saveToTemplate;
-["vehicleCivBoxSupply", "C_Van_01_box_F"] call _fnc_saveToTemplate;
+["vehicleCivCar", "UK3CB_TKC_C_Hilux_Civ_Open"] call _fnc_saveToTemplate;
+["vehicleCivTruck", "rhs_gaz66_msv"] call _fnc_saveToTemplate;
+["vehicleCivHeli", "UK3CB_CHC_C_Mi8AMT"] call _fnc_saveToTemplate;
+["vehicleCivBoat", "O_G_Boat_Transport_01_F"] call _fnc_saveToTemplate;
+["vehicleCivBoxSupply", "UK3CB_ADC_C_S1203"] call _fnc_saveToTemplate;
 
-["staticMG", "rhsgref_nat_DSHKM"] call _fnc_saveToTemplate;
-["staticAT", "rhsgref_nat_SPG9"] call _fnc_saveToTemplate;
-["staticAA", "rhsgref_nat_ZU23"] call _fnc_saveToTemplate;
-["staticMortar", "rhsgref_nat_2b14"] call _fnc_saveToTemplate;
+["staticMG", "rhs_KORD_high_MSV"] call _fnc_saveToTemplate;
+["staticAT", "rhs_Kornet_9M133_2_msv"] call _fnc_saveToTemplate;
+["staticAA", "RHS_ZU23_MSV"] call _fnc_saveToTemplate;
+["staticMortar", "rhs_2b14_82mm_msv"] call _fnc_saveToTemplate;
 ["staticMortarMagHE", "rhs_mag_3vo18_10"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "rhs_mag_d832du_10"] call _fnc_saveToTemplate;
 
@@ -90,27 +90,62 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 //////////////////////////////////////
 
 ["blackMarketStock", [
-    ["RHS_TOW_TriPod_WD", 3000, "STATICAT", {tierWar > 3}],
-    ["rhsgref_nat_AGS30_TriPod", 3000, "STATICMG", {tierWar > 3}],
+    ["rhs_Igla_AA_pod_msv", 3000, "STATICAA", {tierWar > 3}],    
+    ["rhs_Kornet_9M133_2_msv", 3000, "STATICAT", {tierWar > 3}],
+    ["RHS_AGS30_TriPod_MSV", 3000, "STATICMG", {tierWar > 3}],
+    ["rhs_D30_at_msv", 6000, "STATICMG", {tierWar > 4}],
+    ["rhs_D30_msv", 13000, "STATICMG", {tierWar > 5}],
 
-
+    ["rhs_tigr_m_msv", 1000, "CAR", {true}],
+    ["rhs_tigr_sts_msv", 1300, "CAR", {tierWar > 2}],
     ["rhsgref_BRDM2UM_msv", 1750, "CAR", {true}],
     ["rhsgref_BRDM2_HQ_msv", 2050, "CAR", {true}],
     ["rhsgref_BRDM2_msv", 2500, "CAR", {true}],
+    ["rhsgref_BRDM2_ATGM_msv", 3500, "CAR", {tierWar > 3}],  
+    ["RHS_BM21_MSV_01", 25000, "CAR", {tierWar > 8}],
+    ["rhs_9k79", 50000, "CAR", {tierWar > 8}],
+    ["rhs_9k79_K", 38000, "CAR", {tierWar > 8}],           
 
-    ["rhsgref_nat_btr70", 6000, "APC", {true}],
-    ["rhs_bmd1k", 9000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["rhs_bmd2", 12500, "APC", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_btr80_msv", 5000, "APC", {true}],
+    ["rhs_btr80a_msv", 6500, "APC", {tierWar > 2}],      
+    ["rhs_bmd1pk", 7000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_bmd2m", 9500, "APC", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_bmd4m_vdv", 11000, "APC", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_bmp3mera_msv", 12500, "APC", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_bmp2k_msv", 11500, "APC", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_bmp1k_msv", 10000, "APC", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_brm1k_msv", 9000, "APC", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_Ob_681_2", 10000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],        
+    ["rhs_sprut_vdv", 15000, "APC", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t15_tv", 17000, "APC", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],         
 
-    ["rhs_t72ba_tv", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
-    ["rhs_t80", 21000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t72bb_tv", 18000, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_2s1_tv", 21000, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_2s3_tv", 23000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],    
+    ["rhs_t72bc_tv", 19000, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t80b", 18000, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t80bv", 19000, "TANK", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t80uk", 20000, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],        
+    ["rhs_t72be_tv", 19500, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t90sm_tv", 22500, "TANK", {tierWar > 8 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t90am_tv", 23500, "TANK", {tierWar > 8 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t14_tv", 28500, "TANK", {tierWar > 8 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["rhs_t90a_tv", 21500, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],        
     
-    ["rhs_zsu234_aa", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
+    ["rhs_zsu234_aa", 7000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
+    ["UK3CB_KDF_I_MTLB_ZU23", 6500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
+    ["UK3CB_O_2S6M_Tunguska_VPV", 10000, "AA", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],    
 
-    ["rhs_l159_CDF", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+    ["RHS_Su25SM_vvs", 23000, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+    ["rhs_mig29sm_vvs", 28000, "PLANE", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+    ["RHS_T50_vvs_blueonblue", 30000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],        
 
-    ["RHS_Mi8mt_vvsc", 15000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
-    ["RHS_Mi8MTV3_vvsc", 25000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
+    ["RHS_Mi8AMT_vvsc", 13000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+    ["RHS_Mi8MTV3_heavy_vvsc", 16000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+    ["rhs_ka60_c", 18000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+    ["RHS_Mi24Vt_vvsc", 21000, "HELI", {tierWar > 6 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+    ["rhs_mi28n_vvsc", 22000, "HELI", {tierWar > 6 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],            
+    ["RHS_Ka52_vvsc", 26000, "HELI", {tierWar > 7 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
 ]] call _fnc_saveToTemplate;
 
 ///////////////////////////
@@ -118,19 +153,25 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "rhs_weap_savz61_folded", "rhs_weap_savz61", "rhsgref_10rnd_765x17_vz61", "rhsgref_20rnd_765x17_vz61",
-    "rhs_weap_Izh18", "rhsgref_1Rnd_00Buck", "rhsgref_1Rnd_Slug",
-    "rhs_weap_kar98k", "rhsgref_5Rnd_792x57_kar98k",
-    "rhs_weap_panzerfaust60",
-    "rhs_grenade_nbhgr39B_mag", "rhs_grenade_sthgr24_mag",
+    "rhs_weap_makarov_pm", "rhs_mag_9x18_8_57N181S",
+    "rhs_weap_Izh18", "rhsgref_1Rnd_00Buck", "rhsgref_1Rnd_Slug", "rhsgref_5Rnd_762x54_m38",
+    "CUP_sgun_CZ584_RIS", "sgun_HunterShotgun_01_F", "sgun_HunterShotgun_01_sawedoff_F", 
+    "rhs_weap_m3a1", "rhsgref_30rnd_1143x23_M1911B_SMG", "rhsgref_30rnd_1143x23_M1T_SMG",
+    "rhs_weap_scorpion", "rhsgref_20rnd_765x17_vz61",
+     "rhs_weap_m38_rail", "rhs_weap_mosin_sbr", "rhs_weap_pb_6p9",
+    "uk3cb_ppsh41", "uk3cb_PPSH_71rnd_magazine", "uk3cb_PPSH_71rnd_magazine_RT", "uk3cb_PPSH_71rnd_magazine_RM", "uk3cb_PPSH_71rnd_magazine_R",
+    "uk3cb_sks_01", "uk3cb_10rnd_magazine_sks", "uk3cb_10rnd_magazine_sks_R", "uk3cb_10rnd_magazine_sks_RT",
+    "rhs_grenade_khattabka_vog25_mag", "rhs_mag_rdg2_white",
+    "rhs_weap_panzerfaust60", "6Rnd_12Gauge_Pellets", "6Rnd_12Gauge_Slug", "8Rnd_12Gauge_Pellets", "8Rnd_12Gauge_Slug",
+    "CUP_1Rnd_B_CZ584_74Slug", "CUP_1Rnd_B_CZ584_74Pellets", "CUP_7Rnd_B_CZ584_OFP", 
     ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
-    "B_FieldPack_oli",
     "Binocular",
-    "rhs_weap_rsp30_white","rhs_mag_rsp30_white",
-    "rhs_weap_rsp30_green","rhs_mag_rsp30_green",
-    "rhs_weap_rsp30_red", "rhs_mag_rsp30_red",
-    "rhs_mag_nspd", "rhs_mag_nspn_yellow", "rhs_mag_nspn_green", "rhs_mag_nspn_red",
-    "rhsgref_chicom","V_BandollierB_oli"
+    "rhs_radio_R169P1",
+    "B_FieldPack_oli",
+    "rhsgref_chicom","V_BandollierB_oli",
+    "rhs_vest_pistol_holster","rhs_vest_commander","rhs_6sh92_digi",
+    "rhs_6sh92_digi_headset","rhs_6sh92_digi_radio","rhs_6sh92_digi_vog","rhs_6sh92_digi_vog_headset","rhs_vydra_3m"
+
 ];
 
 private _civilianBackpacks =  [];
@@ -159,18 +200,21 @@ if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment app
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-    "rhsgref_uniform_alpenflage",
-    "rhsgref_uniform_gorka_1_f",
-    "rhsgref_uniform_3color_desert",
-    "rhsgref_uniform_dpm",
-    "rhsgref_uniform_dpm_olive",
-    "rhsgref_uniform_flecktarn",
-    "rhsgref_uniform_flecktarn_full",
-    "rhsgref_uniform_og107",
-    "rhsgref_uniform_og107_erdl",
-    "rhsgref_uniform_tigerstripe",
-    "rhsgref_uniform_woodland",
-    "rhsgref_uniform_woodland_olive"
+    "rhs_uniform_vkpo",
+    "rhs_uniform_vkpo_gloves",
+    "rhs_uniform_vkpo_alt",
+    "rhs_uniform_vkpo_gloves_alt",
+    "rhs_uniform_emr_patchless",
+    "rhs_uniform_vdv_emr",
+    "rhs_uniform_emr_des_patchless",
+    "rhs_uniform_vdv_emr_des",
+    "rhs_uniform_6sh122_v1",
+	"rhs_uniform_6sh122_gloves_v1",
+    "rhs_uniform_6sh122_v2",
+    "rhs_uniform_6sh122_gloves_v2",
+    "rhs_uniform_df15",
+    "rhs_uniform_df15_tan"
+
 ];
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;
@@ -178,10 +222,29 @@ private _rebUniforms = [
 ["headgear", [
     "rhs_beanie_green",
     "H_Bandanna_khk",
-    "H_Cap_blk",
+    "rhs_6m2",
+    "rhs_6m2_1",
     "H_Cap_oli",
     "H_Cap_headphones",
-    "rhs_headband"
+    "rhs_beret_mp2",
+    "rhs_beret_mvd",
+    "rhs_beret_omon",
+    "rhs_Booniehat_digi",
+    "rhs_fieldcap_helm_digi",
+    "rhs_fieldcap_digi",
+    "rhs_fieldcap_digi2",
+    "rhs_gssh18",
+    "rhs_tsh4",
+    "rhs_tsh4_ess",
+    "rhs_vkpo_cap",
+    "rhs_zsh7a_mike_green",
+    "rhs_zsh7a_mike_green_alt",
+    "rhs_zsh7a_alt",
+    "rhsgref_bcap_specter",
+    "rhs_balaclava",
+    "rhs_balaclava1_olive",
+    "rhs_scarf",
+    "rhs_vkpo_cap_alt"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -189,14 +252,10 @@ private _rebUniforms = [
 /////////////////////
 
 ["faces", [
-    "LivonianHead_1", "LivonianHead_2", "LivonianHead_3", "LivonianHead_4",
-    "LivonianHead_5", "LivonianHead_6", "LivonianHead_7", "LivonianHead_8",
-    "LivonianHead_9", "LivonianHead_10","Sturrock","WhiteHead_01","WhiteHead_02","WhiteHead_03",
-    "WhiteHead_05","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10",
-    "WhiteHead_12","WhiteHead_13","WhiteHead_14","WhiteHead_15","WhiteHead_16",
-    "WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"
+    "RussianHead_1", "RussianHead_2", "RussianHead_3", "RussianHead_4", "RussianHead_5" 
+
 ]] call _fnc_saveToTemplate;
-["voices", ["rhs_male01cz","rhs_male02cz","rhs_male03cz","rhs_male04cz","rhs_male05cz"]] call _fnc_saveToTemplate;
+["voices", ["Male01RUS","Male02RUS","Male03RUS","RHS_Male01RUS", "RHS_Male02RUS", "RHS_Male03RUS", "RHS_Male04RUS", "RHS_Male05RUS"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //
@@ -212,7 +271,7 @@ _loadoutData set ["uniforms", _rebUniforms];
 
 _loadoutData set ["glasses", ["G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
 _loadoutData set ["goggles", ["G_Lowprofile"]];
-_loadoutData set ["facemask", ["rhssaf_veil_Green", "G_Bandanna_blk", "G_Bandanna_oli", "G_Bandanna_khk", "G_Bandanna_tan", "G_Bandanna_beast", "G_Bandanna_shades", "G_Bandanna_sport", "G_Bandanna_aviator"]];
+_loadoutData set ["facemask", ["rhs_balaclava", "rhs_balaclava1_olive", "rhs_scarf"]];
 
 _loadoutData set ["items_medical_basic", ["BASIC"] call A3A_fnc_itemset_medicalSupplies];
 _loadoutData set ["items_medical_standard", ["STANDARD"] call A3A_fnc_itemset_medicalSupplies];

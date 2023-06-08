@@ -1,10 +1,3 @@
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasMarksman = "mark" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasTanks = "tank" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
-
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -15,6 +8,50 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["flagTexture", ""] call _fnc_saveToTemplate;
 ["flagMarkerType", ""] call _fnc_saveToTemplate;
 
+///////////////////////////
+//    Red Box Vehicles   //
+///////////////////////////
+
+["vehiclesBasic", []] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", []] call _fnc_saveToTemplate;
+["vehiclesLightArmed", []] call _fnc_saveToTemplate;
+["vehiclesTruck", []] call _fnc_saveToTemplate;
+["vehiclesAT", []] call _fnc_saveToTemplate;
+["vehiclesAA", []] call _fnc_saveToTemplate;
+
+["vehiclesBoat", []] call _fnc_saveToTemplate;
+["vehiclesRepair", []] call _fnc_saveToTemplate;
+
+["vehiclesPlane", []] call _fnc_saveToTemplate;
+["vehiclesMedical", []] call _fnc_saveToTemplate;
+
+["vehiclesCivCar", []] call _fnc_saveToTemplate;
+["vehiclesCivTruck", []] call _fnc_saveToTemplate;
+["vehiclesCivHeli", []] call _fnc_saveToTemplate;
+["vehiclesCivBoat", []] call _fnc_saveToTemplate;
+["vehiclesCivPlane", []] call _fnc_saveToTemplate;
+
+
+["staticMGs", []] call _fnc_saveToTemplate;
+["staticAT", []] call _fnc_saveToTemplate;
+["heavystaticAT", []] call _fnc_saveToTemplate;
+["staticAA", []] call _fnc_saveToTemplate;
+["staticMortars", []] call _fnc_saveToTemplate;
+["staticMortarMagHE", ""] call _fnc_saveToTemplate;
+["staticMortarMagSmoke", ""] call _fnc_saveToTemplate;
+
+["minesAT", []] call _fnc_saveToTemplate;
+["minesAPERS", []] call _fnc_saveToTemplate;
+
+
+["breachingExplosivesAPC", []] call _fnc_saveToTemplate;
+["breachingExplosivesTank", []] call _fnc_saveToTemplate;
+
+//Enter #include "Modset_Reb_Vehicle_Attributes.sqf" here
+
+///////////////////////////
+//   Scripts or AI use   //
+///////////////////////////
 
 ["vehicleBasic", ""] call _fnc_saveToTemplate;
 ["vehicleLightUnarmed", ""] call _fnc_saveToTemplate;
@@ -36,19 +73,10 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehicleCivBoat", ""] call _fnc_saveToTemplate;
 ["vehicleCivSupply", ""] call _fnc_saveToTemplate;
 
-
 ["staticMG", ""] call _fnc_saveToTemplate;
-["staticAT", ""] call _fnc_saveToTemplate;
-["staticAA", ""] call _fnc_saveToTemplate;
+["AIstaticAT", ""] call _fnc_saveToTemplate;
+["AIstaticAA", ""] call _fnc_saveToTemplate;
 ["staticMortar", ""] call _fnc_saveToTemplate;
-["staticMortarMagHE", ""] call _fnc_saveToTemplate;
-["staticMortarMagSmoke", ""] call _fnc_saveToTemplate;
-
-["minesAT", []] call _fnc_saveToTemplate;
-["minesAPERS", []] call _fnc_saveToTemplate;
-
-["breachingExplosivesAPC", []] call _fnc_saveToTemplate;
-["breachingExplosivesTank", []] call _fnc_saveToTemplate;
 
 //////////////////////////////////////
 //       Antistasi Plus Stuff       //
@@ -85,6 +113,7 @@ if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc15
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["tf_anprc155","tf_anprc155_coyote"]};
 if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","TFAR_anprc154"]};
 if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["TFAR_anprc155","TFAR_anprc155_coyote"]};
+_initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [];          //Uniforms given to Normal Rebels

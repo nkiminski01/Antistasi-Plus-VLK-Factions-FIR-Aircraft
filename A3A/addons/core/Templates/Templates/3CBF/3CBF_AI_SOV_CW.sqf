@@ -83,6 +83,7 @@
 
 ["mortarMagazineHE", "rhs_mag_3vo18_10"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "rhs_mag_d832du_10"] call _fnc_saveToTemplate;
+["mortarMagazineFlare", "rhs_mag_3vs25m_10"] call _fnc_saveToTemplate;
 
 
 ["minefieldAT", ["rhs_mine_tm62m"]] call _fnc_saveToTemplate;
@@ -303,9 +304,9 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["rhs_uniform_afghanka_vsr_1", "rhs_uniform_afghanka_vsr_2", "rhs_uniform_afghanka_winter_vsr", "rhs_uniform_afghanka_winter_vsr_2"]];
-_eliteLoadoutData set ["vests", ["rhs_6b5", "rhs_6b5_rifleman"]];
-_eliteLoadoutData set ["SLvests", ["rhs_6b5", "rhs_6b5_rifleman", "rhs_6b5_officer"]];
-_eliteLoadoutData set ["SNIvests", ["rhs_6b5_sniper"]];
+_eliteLoadoutData set ["vests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_eliteLoadoutData set ["SLvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_eliteLoadoutData set ["SNIvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
 _eliteLoadoutData set ["backpacks", ["rhs_rd54_vest_flora2"]];
 _eliteLoadoutData set ["atBackpacks", ["rhs_rpg_empty"]];
 _eliteLoadoutData set ["helmets", ["rhs_6b7_1m", "rhs_6b7_1m_olive"]];
@@ -385,10 +386,10 @@ _eliteLoadoutData set ["sidearms", ["rhs_weap_pya", "rhs_weap_6p53"]];
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["rhs_uniform_afghanka_ttsko", "rhs_uniform_afghanka_ttsko_2", "rhs_uniform_afghanka_boots_ttsko", "rhs_uniform_afghanka_winter_ttsko", "rhs_uniform_afghanka_winter_boots_ttsko"]];
-_militaryLoadoutData set ["vests", ["rhs_6b3", "rhs_6b3_AK", "rhs_6b3_AK_3", "rhs_6b5_ttsko"]];
-_militaryLoadoutData set ["SLvests", ["rhs_6b3_off", "rhs_6b3_holster", "rhs_6b5_officer_ttsko"]];
-_militaryLoadoutData set ["SNIvests", ["rhs_6b3", "rhs_6b3_AK_2", "rhs_6b5_sniper_ttsko"]];
-_militaryLoadoutData set ["GLvests", ["rhs_6b3_VOG", "rhs_6b3_VOG_2", "rhs_6b5_ttsko"]];
+_militaryLoadoutData set ["vests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_militaryLoadoutData set ["SLvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_militaryLoadoutData set ["SNIvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_militaryLoadoutData set ["GLvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
 _militaryLoadoutData set ["backpacks", ["rhs_rd54_vest", "rhs_sidor"]];
 _militaryLoadoutData set ["atBackpacks", ["rhs_rpg_6b3"]];
 _militaryLoadoutData set ["helmets", ["rhs_ssh60", "rhs_ssh60", "rhs_ssh68_2", "rhs_ssh68_2",  "rhs_stsh81_butan",  "rhs_stsh81_butan", "rhs_fieldcap_m88_ttsko", "rhs_fieldcap_m88_ttsko_back"]];
@@ -504,11 +505,11 @@ _policeLoadoutData set ["sidearms", ["rhs_weap_makarov_pm"]];
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _militiaLoadoutData set ["uniforms", ["rhs_uniform_afghanka_boots", "rhs_uniform_afghanka", "rhs_uniform_afghanka_winter", "rhs_uniform_afghanka_winter_boots"]];
-_militiaLoadoutData set ["vests", ["rhs_belt_AK", "rhs_belt_AK_back", "rhs_6b2_AK"]];
-_militiaLoadoutData set ["ATvests", ["rhs_6b2_AK"]];
-_militiaLoadoutData set ["GLvests", ["rhs_belt_AK_GL", "rhs_6b2_AK"]];
-_militiaLoadoutData set ["MGvests", ["rhs_belt_RPK", "rhs_6b2_RPK"]];
-_militiaLoadoutData set ["SNIvests", ["rhs_6b2_SVD", "rhs_belt_svd"]];
+_militiaLoadoutData set ["vests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_militiaLoadoutData set ["ATvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_militiaLoadoutData set ["GLvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_militiaLoadoutData set ["MGvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
+_militiaLoadoutData set ["SNIvests", ["CUP_V_O_SLA_Flak_Vest03", "CUP_V_O_SLA_Flak_Vest01", "CUP_V_CDF_6B3_1_Green"]];
 _militiaLoadoutData set ["backpacks", ["rhs_rd54"]];
 _militiaLoadoutData set ["medBackpacks", ["rhs_medic_bag"]];
 _militiaLoadoutData set ["atBackpacks", ["rhs_rpg_6b2"]];

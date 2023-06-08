@@ -98,6 +98,7 @@ private _policeVehs = if (_hasContact) then {
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
+["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
 
 ["minefieldAT", ["ATMine"]] call _fnc_saveToTemplate;

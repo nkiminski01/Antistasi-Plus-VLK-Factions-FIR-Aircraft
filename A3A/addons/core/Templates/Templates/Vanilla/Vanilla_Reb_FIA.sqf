@@ -1,8 +1,3 @@
-private _hasWs = "ws" in A3A_enabledDLC;
-private _hasLawsOfWar = "orange" in A3A_enabledDLC;
-private _hasApex = "expansion" in A3A_enabledDLC;
-private _hasContact = "enoch" in A3A_enabledDLC;
-
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -13,12 +8,60 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["flagTexture", "a3\data_f\flags\flag_fia_co.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 
+///////////////////////////
+//    Red Box Vehicles   //
+///////////////////////////
+
+["vehiclesBasic", ["I_G_Quadbike_01_F"]] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", ["I_G_Offroad_01_F"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", ["I_G_Offroad_01_armed_F"]] call _fnc_saveToTemplate;
+["vehiclesTruck", ["I_G_Van_01_transport_F"]] call _fnc_saveToTemplate;
+["vehiclesAT", ["I_G_Offroad_01_AT_F"]] call _fnc_saveToTemplate;
+private _vehicleAA = [];
+
+["vehiclesBoat", ["I_C_Boat_Transport_02_F"]] call _fnc_saveToTemplate;
+
+["vehiclesPlane", ["I_C_Plane_Civil_01_F"]] call _fnc_saveToTemplate;
+
+["vehiclesCivCar", ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_SUV_01_F"]] call _fnc_saveToTemplate;
+["vehiclesCivTruck", ["C_Van_01_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["C_Heli_Light_01_civil_F"]] call _fnc_saveToTemplate;
+["vehiclesCivBoat", ["C_Boat_Civil_01_F", "C_Rubberboat"]] call _fnc_saveToTemplate;
+
+["staticMGs", ["I_G_HMG_02_high_F", "I_G_HMG_02_F"]] call _fnc_saveToTemplate;
+["staticAT", ["I_static_AT_F"]] call _fnc_saveToTemplate;
+private _staticAA = ["I_static_AA_F"];
+["staticMortars", ["I_G_Mortar_01_F"]] call _fnc_saveToTemplate;
+["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
+["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
+["staticMortarMagFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
+
+["minesAT", ["ATMine_Range_Mag"]] call _fnc_saveToTemplate;
+["minesAPERS", ["APERSMine_Range_Mag"]] call _fnc_saveToTemplate;
+
+["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
+["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
+
+
+if (allowDLCWS) then {
+  _vehicleAA append ["I_Tura_Truck_02_aa_lxWS"];
+  _staticAA insert [0, "I_Tura_ZU23_lxWS"];
+};
+["vehiclesAA", _vehicleAA] call _fnc_saveToTemplate;
+["staticAA", _staticAA] call _fnc_saveToTemplate;
+
+#include "Vanilla_Reb_Vehicle_Attributes.sqf"
+
+///////////////////////////
+//   Scripts or AI use   //
+///////////////////////////
+
 ["vehicleBasic", "I_G_Quadbike_01_F"] call _fnc_saveToTemplate;
 ["vehicleLightUnarmed", "I_G_Offroad_01_F"] call _fnc_saveToTemplate;
 ["vehicleLightArmed", "I_G_Offroad_01_armed_F"] call _fnc_saveToTemplate;
 ["vehicleTruck", "I_G_Van_01_transport_F"] call _fnc_saveToTemplate;
 ["vehicleAT", "I_G_Offroad_01_AT_F"] call _fnc_saveToTemplate;
-private _vehicleAA = "";
+["vehicleAA", ""] call _fnc_saveToTemplate;
 
 ["vehicleBoat", "I_C_Boat_Transport_02_F"] call _fnc_saveToTemplate;
 ["vehicleRepair", "I_G_Offroad_01_repair_F"] call _fnc_saveToTemplate;
@@ -30,68 +73,55 @@ private _vehicleAA = "";
 ["vehicleCivTruck", "C_Truck_02_transport_F"] call _fnc_saveToTemplate;
 ["vehicleCivHeli", "C_Heli_Light_01_civil_F"] call _fnc_saveToTemplate;
 ["vehicleCivBoat", "C_Rubberboat"] call _fnc_saveToTemplate;
-["vehicleCivBoxSupply", "C_Van_01_box_F"] call _fnc_saveToTemplate;
-
+["vehicleCivSupply", "C_Van_01_box_F"] call _fnc_saveToTemplate;
 
 ["staticMG", "I_G_HMG_02_high_F"] call _fnc_saveToTemplate;
-["staticAT", "I_static_AT_F"] call _fnc_saveToTemplate;
-private _staticAA = "I_static_AA_F";
+["AIstaticAT", "I_static_AT_F"] call _fnc_saveToTemplate;
+["AIstaticAA", "I_static_AA_F"] call _fnc_saveToTemplate;
 ["staticMortar", "I_G_Mortar_01_F"] call _fnc_saveToTemplate;
-["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
-["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
-
-["minesAT", ["ATMine_Range_Mag", "SLAMDirectionalMine_Wire_Mag"]] call _fnc_saveToTemplate;
-["minesAPERS", ["ClaymoreDirectionalMine_Remote_Mag","APERSMine_Range_Mag", "APERSBoundingMine_Range_Mag", "APERSTripMine_Wire_Mag"]] call _fnc_saveToTemplate;
-
-["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
-["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
-
-if (_hasWs) then {
-  _vehicleAA = "I_Tura_Truck_02_aa_lxWS";
-  _staticAA = "I_Tura_ZU23_lxWS";
-};
-["vehicleAA", _vehicleAA] call _fnc_saveToTemplate;
-["staticAA", _staticAA] call _fnc_saveToTemplate;
 
 //////////////////////////////////////
 //       Antistasi Plus Stuff       //
 //////////////////////////////////////
 
-//classname, price, type, availability condition
-private _shopWs = if (_hasWs) then {
-    [
-        ["I_UAV_02_lxWS", 3500, "UAV", {tierWar > 2}], 
-        ["I_G_UAV_02_IED_lxWS", 4500, "UAV", {tierWar > 3}],
-        ["I_G_Offroad_01_armor_base_lxWS", 4500, "UNARMEDCAR", {true}],
-        ["I_G_Offroad_01_armor_armed_lxWS", 4500, "ARMEDCAR", {true}],
-        ["I_G_Offroad_01_armor_AT_lxWS", 4500, "ARMEDCAR", {true}]
-    ]
-} else {
-    []
-};
+["blackMarketStock", [
+    ["UK3CB_LDF_I_RBS70", 2500, "STATICAA", {tierWar > 3}],
+    ["UK3CB_CW_US_B_LATE_TOW_TriPod", 3000, "STATICAT", {tierWar > 3}],
+    ["RHS_MK19_TriPod_USMC_WD", 3000, "STATICMG", {tierWar > 3}],
 
-private _shopApex = if (_hasApex) then {
-    [
-        ["I_C_Offroad_02_unarmed_F", 200, "UNARMEDCAR", {true}], 
-        ["I_C_Offroad_02_LMG_F", 800, "ARMEDCAR", {true}],
-        ["I_C_Offroad_02_AT_F", 1450, "ARMEDCAR", {true}]
-    ]
-} else {
-    []
-};
+    ["UK3CB_ARD_I_Hilux_Mortar", 15000, "ARTILLERY", {tierWar > 5}],
+    ["UK3CB_ARD_I_Hilux_Rocket", 25000, "ARTILLERY", {tierWar > 7}],
+    ["UK3CB_ARD_I_Hilux_Rocket_Arty", 30000, "ARTILLERY", {tierWar > 8}],
 
-private _vehiclesBlackMarket = _shopWs + _shopApex + [
-    ["I_UAV_01_F", 2000, "UAV", {true}],
-    ["I_LT_01_AA_F", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
-    ["I_APC_Wheeled_03_cannon_F", 15000, "APC", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
-    ["B_Heli_Light_01_dynamicLoadout_F", 25000, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}]
-];
-["blackMarketStock", _vehiclesBlackMarket] call _fnc_saveToTemplate;
+    ["UK3CB_ARD_I_Hilux_Zu23", 1750, "CAR", {tierWar > 2}],
+    ["UK3CB_ARD_I_Hilux_GMG", 2500, "CAR", {tierWar > 2}],
+    ["UK3CB_ARD_I_Hilux_Metis", 3500, "CAR", {tierWar > 2}],
+    
+    ["UK3CB_KRG_I_M113tank_unarmed", 1750, "APC", {true}],
+    ["UK3CB_KRG_I_M113tank_M2_90", 2500, "APC", {true}],
+    ["UK3CB_KRG_I_M113tank_MK19_90", 4500, "CAR", {true}],
+
+    ["UK3CB_I_G_BMP1", 9000, "APC", {tierWar > 3 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    ["UK3CB_I_G_BMP2K", 12500, "APC", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+
+    ["UK3CB_I_G_T34", 10000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}],
+    ["UK3CB_I_G_T55", 13000, "TANK", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
+    ["UK3CB_MDF_I_M60A3", 17500, "TANK", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+
+    ["UK3CB_I_G_ZsuTank", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
+
+    ["RHSGREF_A29B_HIDF", 17500, "PLANE", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
+    ["UK3CB_MDF_I_Mystere_CAS1", 22500, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
+
+    ["UK3CB_ADA_I_UH1H_M240", 13500, "HELI", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}],
+    ["UK3CB_ADA_I_UH1H_GUNSHIP", 20000, "HELI", {tierWar > 5 &&{ {sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}]
+]] call _fnc_saveToTemplate;
 
 ["variants", [
-    ["I_APC_Wheeled_03_cannon_F", ["Guerilla_01",1]],
-    ["I_LT_01_AA_F", ["Indep_Olive",1]]
+    ["RHSGREF_A29B_HIDF", ["Brazil",1]],
+    ["RHSGREF_A29B_HIDF", ["MIG",1]]
 ]] call _fnc_saveToTemplate;
+
 
 
 ///////////////////////////
@@ -161,6 +191,7 @@ if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc15
 if (A3A_hasTFAR && startWithLongRangeRadio) then {_initialRebelEquipment append ["tf_anprc155","tf_anprc155_coyote"]};
 if (A3A_hasTFARBeta) then {_initialRebelEquipment append ["TFAR_microdagr","TFAR_anprc154"]};
 if (A3A_hasTFARBeta && startWithLongRangeRadio) then {_initialRebelEquipment append ["TFAR_anprc155","TFAR_anprc155_coyote"]};
+_initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red","Chemlight_yellow"];
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [

@@ -75,7 +75,7 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
     ,"UK3CB_TKC_C_V3S_Refuel", 0.1
 ]] call _fnc_saveToTemplate;
 
-["vehiclesCivHeli", ["UK3CB_TKC_C_Mi8AMT"]] call _fnc_saveToTemplate;
+["vehiclesCivHeli", ["CUP_C_MI6T_RU"]] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Loadouts       //

@@ -81,6 +81,7 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 
 ["mortarMagazineHE", "rhs_12Rnd_m821_HE"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
+["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
 
 ["minefieldAT", ["rhsusf_mine_M19"]] call _fnc_saveToTemplate;

@@ -78,6 +78,7 @@
 
 ["mortarMagazineHE", "rhs_12Rnd_m821_HE"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
+["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
 
 
 ["minefieldAT", ["rhsusf_mine_M19"]] call _fnc_saveToTemplate;
@@ -231,12 +232,12 @@ _loadoutData set ["goggles", ["rhsusf_oakley_goggles_clr", "rhsusf_oakley_goggle
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
 _sfLoadoutData set ["uniforms", ["UK3CB_LDF_B_U_CombatUniform_Shortsleeve_WDL_01", "UK3CB_LDF_B_U_CombatUniform_WDL_01"]];
-_sfLoadoutData set ["vests", ["UK3CB_LDF_B_V_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_RIF_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI"]];
-_sfLoadoutData set ["MEDvests", ["UK3CB_LDF_B_V_MD_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MD_Vest_KKZ10_OLI"]];
-_sfLoadoutData set ["GLvests", ["UK3CB_LDF_B_V_GREN_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_GREN_Vest_KKZ10_GEO"]];
-_sfLoadoutData set ["SLvests", ["UK3CB_LDF_B_V_SL_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_TL_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI"]];
-_sfLoadoutData set ["SNIvests", ["UK3CB_LDF_B_V_MK_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MK_Vest_KKZ10_OLI"]];
-_sfLoadoutData set ["MGvests", ["UK3CB_LDF_B_V_MG_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MG_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_LMG_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI"]];
+_sfLoadoutData set ["vests", ["CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_PMC_CIRAS_OD_Grenadier"]];
+_sfLoadoutData set ["MEDvests", ["CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_PMC_CIRAS_OD_Grenadier"]];
+_sfLoadoutData set ["GLvests", ["CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_PMC_CIRAS_OD_Grenadier"]];
+_sfLoadoutData set ["SLvests", ["CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_PMC_CIRAS_OD_Grenadier"]];
+_sfLoadoutData set ["SNIvests", ["CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_PMC_CIRAS_OD_Grenadier"]];
+_sfLoadoutData set ["MGvests", ["CUP_Vest_RUS_6B45_Sh117_PKP_Del_Green"]];
 _sfLoadoutData set ["helmets", ["UK3CB_LDF_B_H_UHB13_Headset_GEO", "UK3CB_LDF_B_H_UHB13_GEO"]];
 _sfLoadoutData set ["helmets", ["UK3CB_LDF_B_H_MHB15_GEO", "UK3CB_LDF_B_H_MHB15_OLI", "UK3CB_LDF_B_H_MHB15_EarProtectors_GEO", "UK3CB_LDF_B_H_MHB15_Headset_GEO", "H_Bandanna_khk_hs", "H_Watchcap_camo"]];
 _sfLoadoutData set ["NVGs", ["rhsusf_ANPVS_15"]];
@@ -354,12 +355,12 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["UK3CB_LDF_B_U_CombatUniform_Shortsleeve_WDL_01", "UK3CB_LDF_B_U_CombatUniform_WDL_01"]];
-_eliteLoadoutData set ["vests", ["UK3CB_LDF_B_V_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_RIF_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI"]];
-_eliteLoadoutData set ["MEDvests", ["UK3CB_LDF_B_V_MD_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MD_Vest_KKZ10_OLI"]];
-_eliteLoadoutData set ["GLvests", ["UK3CB_LDF_B_V_GREN_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_GREN_Vest_KKZ10_GEO"]];
-_eliteLoadoutData set ["SLvests", ["UK3CB_LDF_B_V_SL_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_TL_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI"]];
-_eliteLoadoutData set ["SNIvests", ["UK3CB_LDF_B_V_MK_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MK_Vest_KKZ10_OLI"]];
-_eliteLoadoutData set ["MGvests", ["UK3CB_LDF_B_V_MG_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MG_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_LMG_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI"]];
+_eliteLoadoutData set ["vests", ["CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green", "CUP_V_B_Interceptor_Grenadier_Olive"]];
+_eliteLoadoutData set ["MEDvests", ["CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green", "CUP_V_B_Interceptor_Grenadier_Olive"]];
+_eliteLoadoutData set ["GLvests", ["CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green", "CUP_V_B_Interceptor_Grenadier_Olive"]];
+_eliteLoadoutData set ["SLvests", ["CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green", "CUP_V_B_Interceptor_Grenadier_Olive"]];
+_eliteLoadoutData set ["SNIvests", ["CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green", "CUP_V_B_Interceptor_Grenadier_Olive"]];
+_eliteLoadoutData set ["MGvests", ["CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green", "CUP_V_B_Interceptor_Grenadier_Olive"]];
 _eliteLoadoutData set ["helmets", ["UK3CB_LDF_B_H_UHB13_Headset_GEO", "UK3CB_LDF_B_H_UHB13_GEO"]];
 
 _eliteLoadoutData set ["lightATLaunchers", ["rhs_weap_M136", "rhs_weap_M136_hp"]];
@@ -463,12 +464,12 @@ _eliteLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_militaryLoadoutData set ["vests", ["UK3CB_LDF_B_V_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_RIF_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_RIF_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_RIF_ALT_Vest_KKZ10_OLI"]];
-_militaryLoadoutData set ["MEDvests", ["UK3CB_LDF_B_V_MD_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MD_Vest_KKZ10_OLI"]];
-_militaryLoadoutData set ["GLvests", ["UK3CB_LDF_B_V_GREN_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_GREN_Vest_KKZ10_GEO"]];
-_militaryLoadoutData set ["SLvests", ["UK3CB_LDF_B_V_SL_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_SL_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_TL_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_TL_Vest_KKZ10_OLI"]];
-_militaryLoadoutData set ["SNIvests", ["UK3CB_LDF_B_V_MK_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MK_Vest_KKZ10_OLI"]];
-_militaryLoadoutData set ["MGvests", ["UK3CB_LDF_B_V_MG_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_MG_Vest_KKZ10_OLI", "UK3CB_LDF_B_V_LMG_Vest_KKZ10_GEO", "UK3CB_LDF_B_V_LMG_Vest_KKZ10_OLI"]];
+_militaryLoadoutData set ["vests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
+_militaryLoadoutData set ["MEDvests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
+_militaryLoadoutData set ["GLvests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
+_militaryLoadoutData set ["SLvests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
+_militaryLoadoutData set ["SNIvests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
+_militaryLoadoutData set ["MGvests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
 _militaryLoadoutData set ["helmets", ["UK3CB_LDF_B_H_HB97_GEO", "UK3CB_LDF_B_H_HB97_ESS_GEO", "UK3CB_LDF_B_H_HB97_ESS_Cover_GEO"]];
 _militaryLoadoutData set ["antiInfantryGrenades", ["rhs_mag_rgd5", "rhs_mag_f1", "rhs_mag_rgo", "rhs_mag_rgn"]];
 
@@ -562,7 +563,7 @@ _policeLoadoutData set ["uniforms", [
     "UK3CB_LFR_B_U_Officer_03", 
     "UK3CB_LFR_B_U_Officer_04"
 ]];
-_policeLoadoutData set ["vests", ["V_Pocketed_olive_F", "UK3CB_LFR_B_V_TacVest_OLI"]];
+_policeLoadoutData set ["vests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
 _policeLoadoutData set ["helmets", ["H_Booniehat_khk", "H_Cap_oli", "UK3CB_LFR_B_H_CAP_OLI"]];
 _policeLoadoutData set ["policeWeapons", [
 ["UK3CB_CZ550", "", "", "uk3cb_optic_sro", ["UK3CB_CZ550_5rnd_Mag", "UK3CB_CZ550_5rnd_Mag", "UK3CB_CZ550_5rnd_Mag_RT"], [], ""],
@@ -577,7 +578,7 @@ _policeLoadoutData set ["sidearms", ["rhs_weap_makarov_pm", "UK3CB_BHP"]];
 ////////////////////////////////
 
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_militiaLoadoutData set ["vests", ["UK3CB_LDF_B_V_TacVest_GEO", "V_TacVest_oli", "rhsgref_chestrig", "V_BandollierB_oli"]];
+_militiaLoadoutData set ["vests", ["CUP_Vest_RUS_6B45_Sh117_Green", "CUP_Vest_RUS_6B45_Sh117_Del_Green", "CUP_V_I_RACS_Carrier_Vest_wdl_2"]];
 _militiaLoadoutData set ["helmets", ["H_Bandanna_khk", "H_Bandanna_khk", "UK3CB_H_Woolhat_GRN", "UK3CB_LDF_B_H_HB97_GEO"]];
 _militiaLoadoutData set ["longRangeRadios", ["UK3CB_B_I_Radio_Backpack"]];
 
