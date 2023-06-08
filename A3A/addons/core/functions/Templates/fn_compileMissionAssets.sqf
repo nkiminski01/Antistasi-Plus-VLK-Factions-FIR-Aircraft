@@ -91,7 +91,7 @@ setVar("vehiclesMedical", OccAndInv("vehiclesMedical") + ((A3A_faction_civ get "
 setVar("vehiclesAPCs", OccAndInv("vehiclesAPCs") + Riv("vehiclesRivalsAPCs") + ("APC" call _fnc_extractMarketClasses));
 setVar("vehiclesIFVs", OccAndInv("vehiclesIFVs") );
 setVar("vehiclesUAVs", OccAndInv("uavsAttack")+ OccAndInv("uavsPortable") + Riv("vehiclesRivalsUavs") + ("UAV" call _fnc_extractMarketClasses));
-setVar("vehiclesAA", OccAndInv("vehiclesAA") + ("AA" call _fnc_extractMarketClasses) + [Reb("vehicleAA")] - [""]);
+setVar("vehiclesAA", OccAndInv("vehiclesAA") + ("AA" call _fnc_extractMarketClasses) + Reb("vehiclesAA") - [""]);
 setVar("vehiclesArtillery", OccAndInv("vehiclesArtillery") + ("ARTILLERY" call _fnc_extractMarketClasses));
 setVar("vehiclesTanks", OccAndInv("vehiclesTanks") + Riv("vehiclesRivalsTanks") + ("TANK" call _fnc_extractMarketClasses));
 setVar("vehiclesTransportAir", OccAndInv("vehiclesHelisLight") + OccAndInv("vehiclesHelisTransport") + OccAndInv("vehiclesPlanesTransport"));
@@ -102,10 +102,10 @@ setVar("vehiclesHelisTransport", OccAndInv("vehiclesHelisTransport") );
 setVar("vehiclesPlanesAA", OccAndInv("vehiclesPlanesAA") );
 setVar("vehiclesPlanesCAS", OccAndInv("vehiclesPlanesCAS") );
 setVar("vehiclesPlanesTransport", OccAndInv("vehiclesPlanesTransport"));
-setVar("staticMortars", OccAndInv("staticMortars") + Riv("staticMortars") + [Reb("staticMortar")] + ("STATICMORTAR" call _fnc_extractMarketClasses));
-setVar("staticAA", OccAndInv("staticAAs") + [Reb("staticAA")] + ("STATICAA" call _fnc_extractMarketClasses));
-setVar("staticAT", OccAndInv("staticATs") + [Reb("staticAT")] + ("STATICAT" call _fnc_extractMarketClasses));
-setVar("staticMG", OccAndInv("staticMGs") + Riv("staticLowWeapons") + [Reb("staticMG")] + ("STATICMG" call _fnc_extractMarketClasses));
+setVar("staticMortars", OccAndInv("staticMortars") + Riv("staticMortars") + Reb("staticMortars") + ("STATICMORTAR" call _fnc_extractMarketClasses));
+setVar("staticAA", OccAndInv("staticAA") + Reb("staticAA") + ("STATICAA" call _fnc_extractMarketClasses));
+setVar("staticAT", OccAndInv("staticAT") + Reb("staticAT") + Reb("heavystaticAT") + ("STATICAT" call _fnc_extractMarketClasses));
+setVar("staticMGs", OccAndInv("staticMGs") + Reb("staticMGs") + ("STATICMG" call _fnc_extractMarketClasses));
 
 //Antistasi Plus stuff
 setVar("vehiclesAirborne", OccAndInv("vehiclesAirborne"));
@@ -155,7 +155,7 @@ private _vehMilitia = OccAndInv("vehiclesMilitiaCars")
 setVar("vehiclesMilitia", _vehMilitia);
 
 //boats
-private _vehBoats = OccAndInv("vehiclesTransportBoats") + OccAndInv("vehiclesGunBoats") + [Reb("vehicleBoat")];
+private _vehBoats = OccAndInv("vehiclesTransportBoats") + OccAndInv("vehiclesGunBoats") + Reb("vehiclesBoat");
 setVar("vehiclesBoats", _vehBoats);
 
 //Occ&Inv helicopters
@@ -173,7 +173,8 @@ OccAndInv("vehiclesPlanesCAS")
 + OccAndInv("vehiclesPlanesAA")
 + OccAndInv("vehiclesPlanesTransport")
 + ("PLANE" call _fnc_extractMarketClasses)
-+ [Reb("vehiclePlane"), Reb("vehiclePayloadPlane")];
++ Reb("vehiclesPlane")
++ Reb("vehiclesCivPlane");
 setVar("vehiclesFixedWing", _vehFixedWing);
 
 //trucks to carry infantry
@@ -181,7 +182,7 @@ private _vehTrucks =
 OccAndInv("vehiclesTrucks")
 + OccAndInv("vehiclesMilitiaTrucks")
 + Riv("vehiclesRivalsTrucks")
-+ [Reb("vehicleTruck")];
++ Reb("vehiclesTruck");
 setVar("vehiclesTrucks", _vehTrucks);
 
 //Armed cars
@@ -190,7 +191,7 @@ OccAndInv("vehiclesLightArmed")
 + OccAndInv("vehiclesMilitiaLightArmed")
 + Riv("vehiclesRivalsLightArmed")
 + ("ARMEDCAR" call _fnc_extractMarketClasses)
-+ [Reb("vehicleLightArmed")];
++ Reb("vehiclesLightArmed");
 setVar("vehiclesLightArmed", _carsArmed);
 
 //Unarmed cars
@@ -200,7 +201,7 @@ OccAndInv("vehiclesLightUnarmed")      // anything else?
 + OccAndInv("vehiclesPolice")
 + Riv("vehiclesRivalsCars")
 + ("UNARMEDCAR" call _fnc_extractMarketClasses)
-+ [Reb("vehicleLightUnarmed")];
++ Reb("vehiclesLightUnarmed");
 setVar("vehiclesLightUnarmed", _carsUnarmed);
 setVar("vehiclesLight", _carsArmed + _carsUnarmed);
 
@@ -216,13 +217,11 @@ getVar("vehiclesTanks")
 setVar("vehiclesArmor", _vehArmor);
 
 //rebel vehicles
-private _vehReb = [
-    Reb("vehicleBasic"), Reb("vehicleTruck"), Reb("vehicleRepair"), Reb("vehicleBoat")
-    , Reb("vehicleAT"), Reb("vehicleLightArmed"), Reb("vehicleLightUnarmed")
-    , Reb("staticMG"), Reb("staticAT"), Reb("staticAA"), Reb("staticMortar")
-    , Reb("vehiclePlane"), Reb("vehiclePayloadPlane")
-    , ((A3A_faction_reb get "blackMarketStock") apply {_x select 0})
-];
+private _vehReb = 
+    Reb("vehiclesBasic") + Reb("vehiclesTruck") + Reb("vehiclesBoat")
+    + Reb("vehiclesAT") + Reb("vehiclesLightArmed") + Reb("vehiclesLightUnarmed")
+    + Reb("staticMGs") + Reb("staticAT") + Reb("staticAA") + Reb("staticMortars") + Reb("heavystaticAT")
+    + Reb("vehiclesHelis") + Reb("vehiclesPlane") + Reb("vehiclesMedical") + Reb("vehiclesAA");
 setVar("vehiclesReb", _vehReb);
 
 //trucks that can cary logistics cargo
