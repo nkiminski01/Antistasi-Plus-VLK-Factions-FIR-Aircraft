@@ -104,16 +104,16 @@
                 <Polish>Przenieś kwaterę dowodzenia w inne miejsce</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_move_headquarters_tooltip">
-                <Original>Petros will join your group. Ammobox must be empty. To rebuild, select the Build action near Petros</Original>
-                <French>Petros va rejoindre votre groupe. L'Arsenal doit être vide. Pour reconstruire, sélectionnez l'action "Construire" à côté de Petros.</French>
-                <Russian>Петрос присоединится к вашей группе. Чтобы построить Штаб, выберите на нём пункт "Построить Штаб". Арсенал должен быть пуст.</Russian>
-                <German>Petros tritt deiner Gruppe bei. Munitionskiste muss leer sein. Zur Neuerrichtung die Bauaktion in der Nähe von Petros auswählen.</German>
-                <Czech>Petros se připojí k vaší skupině. Chcete-li vytvořit velitelství, vyberte možnost u Petrose „Zřídit velitelství“. Arzenál musí být prázdný.</Czech>
-                <Chinesesimp>Petros将会加入您的小队。弹药箱必须为空。在Petros附近选择"建造"选项来重建总部。</Chinesesimp>
+                <Original>Mr. Boss Junior will join your group. Ammobox must be empty. To rebuild, select the Build action near Petros</Original>
+                <French>Mr. Boss Junior va rejoindre votre groupe. L'Arsenal doit être vide. Pour reconstruire, sélectionnez l'action "Construire" à côté de Petros.</French>
+                <Russian>Mr. Boss Junior присоединится к вашей группе. Чтобы построить Штаб, выберите на нём пункт "Построить Штаб". Арсенал должен быть пуст.</Russian>
+                <German>Mr. Boss Junior tritt deiner Gruppe bei. Munitionskiste muss leer sein. Zur Neuerrichtung die Bauaktion in der Nähe von Petros auswählen.</German>
+                <Czech>Mr. Boss Junior se připojí k vaší skupině. Chcete-li vytvořit velitelství, vyberte možnost u Petrose „Zřídit velitelství“. Arzenál musí být prázdný.</Czech>
+                <Chinesesimp>Mr. Boss Junior将会加入您的小队。弹药箱必须为空。在Petros附近选择"建造"选项来重建总部。</Chinesesimp>
                 <Korean>페트로스가 당신의 그룹에 합류할 것입니다. 탄약상자는 비워져 있어야 합니다. 재건축하려면 페트로스 근처에서 건축하기를 선택하시오.</Korean>
-                <Italian>Petros si unirà al tuo gruppo. La cassa di munizioni deve essere vuota. Per ricostruirla, seleziona la voce Costruisci, stando vicino a Petros</Italian>
-                <Spanish>Pertos se unirá a tu grupo. La caja de munición debe estar vacía. Para reconstruir, selecciona la acción Construir cerca de Petros</Spanish>
-                <Polish>Petros dołączy do twojej drużyny. Skrzynka na amunicję musi być pusta. Aby odbudować, wybierz akcję Buduj w pobliżu Petrosa</Polish>
+                <Italian>Mr. Boss Junior si unirà al tuo gruppo. La cassa di munizioni deve essere vuota. Per ricostruirla, seleziona la voce Costruisci, stando vicino a Petros</Italian>
+                <Spanish>Mr. Boss Junior se unirá a tu grupo. La caja de munición debe estar vacía. Para reconstruir, selecciona la acción Construir cerca de Petros</Spanish>
+                <Polish>Mr. Boss Junior dołączy do twojej drużyny. Skrzynka na amunicję musi być pusta. Aby odbudować, wybierz akcję Buduj w pobliżu Petrosa</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_members_list_text">
                 <Original>Ingame Member List</Original>
@@ -152,16 +152,16 @@
                 <Polish>Odbuduj</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_rebuild_assets_tooltip">
-                <Original>Rebuilds radio towers and military buildings on selected marker. Cost 5000.</Original>
-                <French>Reconstruit les tours radio et les bâtiments militaires sur le marqueur sélectionné. Coût 5000.</French>
-                <Russian>Восстанавливает радиовышки и военные здания на выбранном маркере. Стоимость 5000.</Russian>
-                <German>Baut Funktürme und Militärgebäude auf ausgewählten Markern wieder auf. 5000 gekostet.</German>
-                <Czech>Obnovuje rádiové věže a vojenské budovy na vybrané značce. Cena 5000.</Czech>
-                <Chinesesimp>在选定的标记上重建无线电塔和军事建筑。 成本5000。</Chinesesimp>
-                <Korean>선택한 마커에 라디오 타워와 군사 건물을 재건설합니다. 비용 5000.</Korean>
-                <Italian>Ricostruisce le torri radio e gli edifici militari sull'indicatore selezionato. Costo 5000.</Italian>
-                <Spanish>Reconstruye torres de radio y edificios militares en el marcador seleccionado. Costo 5000.</Spanish>
-                <Polish>Odbudowuje wieże radiowe i budynki wojskowe na wybranym znaczniku. Koszt 5000.</Polish>
+                <Original>Rebuilds radio towers and military buildings on selected marker.</Original>
+                <French>Reconstruit les tours radio et les bâtiments militaires sur le marqueur sélectionné.</French>
+                <Russian>Восстанавливает радиовышки и военные здания на выбранном маркере.</Russian>
+                <German>Baut Funktürme und Militärgebäude auf ausgewählten Markern wieder auf.</German>
+                <Czech>Obnovuje rádiové věže a vojenské budovy na vybrané značce.</Czech>
+                <Chinesesimp>在选定的标记上重建无线电塔和军事建筑。</Chinesesimp>
+                <Korean>선택한 마커에 라디오 타워와 군사 건물을 재건설합니다.</Korean>
+                <Italian>Ricostruisce le torri radio e gli edifici militari sull'indicatore selezionato.</Italian>
+                <Spanish>Reconstruye torres de radio y edificios militares en el marcador seleccionado.</Spanish>
+                <Polish>Odbudowuje wieże radiowe i budynki wojskowe na wybranym znaczniku.</Polish>
             </Key>
             <Key ID="STR_antistasi_dialogs_hq_button_train_ai_text">
                 <Original>Train Rebel Troops</Original>
@@ -2722,14 +2722,14 @@
                 <Polish>Użyte Skrypty</Polish>
             </Key>
             <Key ID="STR_antistasi_journal_entry_text_Credits_1">
-                <Original>UPSMon by Monsada, Kronzy and Cool=Azroul13.&lt;br/&gt;Persistent Save by zooloo75.&lt;br/&gt;Tags by Marker and Melbo.&lt;br/&gt;JAS by Jeroen (sorry for including you that late)&lt;br/&gt;Advanced Towing by Seth Duda.</Original>
-                <German>UPSMon von Monsada, Kronzy und Cool=Azroul13.&lt;br/&gt;Persistent Save von zooloo75.&lt;br/&gt;Tags von Marker und Melbo.&lt;br/&gt;JAS von Jeroen (Entschuldige, dass es so lange gedauert hat dich hinzuzufügen)&lt;br/&gt;Advanced Towing von Seth Duda.</German>
-                <Czech>UPSMon od Monsada, Kronzy and Cool = Azroul13 &lt;br/&gt;Trvalé Uložit podle zooloo75.&lt;br/&gt;Štítky Marker a Melbo.&lt;br/&gt;JAS od Jeroen (omlouvám se za to, že jste byli pozdě)&lt;br/&gt;Štítky od Markera a Melba.&lt;br/&gt;Rozšířené tažení od Setha Dudy.</Czech>
-                <Korean>UPSMon의 Monsada, Kronzy와 Cool=Azroul13.&lt;br/&gt;영구 저장의 zooloo75.&lt;br/&gt;Tags의 Marker와 Melbo.&lt;br/&gt;JAS의 Jeroen (너무 늦게 포함해서 죄송합니다)&lt;br/&gt;Advanced Towing의 Seth Duda.</Korean>
-                <Chinesesimp>UPSMon by Monsada, Kronzy 和 Cool=Azroul13。&lt;br/&gt;Persistent Save by zooloo75。&lt;br/&gt;Tags by Marker 和 Melbo。&lt;br/&gt;JAS by Jeroen (抱歉这么晚才把你添加进来)。&lt;br/&gt;Advanced Towing by Seth Duda。</Chinesesimp>
-                <Italian>UPSMon da Monsada, Kronzy and Cool=Azroul13.&lt;br/&gt;Salvataggio Persistente di zooloo75.&lt;br/&gt;Tags da Marker and Melbo.&lt;br/&gt;JAS da Jeroen (Scusa per averti incluso così tardi)&lt;br/&gt;Advanced Towing da Seth Duda.</Italian>
-                <Spanish>UPSMon by Monsada, Kronzy and Cool=Azroul13.&lt;br/&gt;Persistent Save by zooloo75.&lt;br/&gt;Tags by Marker and Melbo.&lt;br/&gt;JAS by Jeroen (sorry for including you that late)&lt;br/&gt;Advanced Towing by Seth Duda.</Spanish>
-                <Polish>UPSMon stworzony przez Monsada, Kronzy i Cool=Azroul13.&lt;br/&gt;Persistent Save stworzony przez zooloo75.&lt;br/&gt;Tags stworzony przez Marker i Melbo.&lt;br/&gt;JAS stworzony przez Jeroen.&lt;br/&gt;Advanced Towing stworzony przez Seth Duda.</Polish>
+                <Original>Patcom by Hazey.&lt;br/&gt;Persistent Save by zooloo75.&lt;br/&gt;Tags by Marker and Melbo.&lt;br/&gt;JAS by Jeroen (sorry for including you that late)&lt;br/&gt;Advanced Towing by Seth Duda.</Original>
+                <German>Patcom von Hazey.&lt;br/&gt;Persistent Save von zooloo75.&lt;br/&gt;Tags von Marker und Melbo.&lt;br/&gt;JAS von Jeroen (Entschuldige, dass es so lange gedauert hat dich hinzuzufügen)&lt;br/&gt;Advanced Towing von Seth Duda.</German>
+                <Czech>Patcom od Hazey.&lt;br/&gt;Trvalé Uložit podle zooloo75.&lt;br/&gt;Štítky Marker a Melbo.&lt;br/&gt;JAS od Jeroen (omlouvám se za to, že jste byli pozdě)&lt;br/&gt;Štítky od Markera a Melba.&lt;br/&gt;Rozšířené tažení od Setha Dudy.</Czech>
+                <Korean>Patcom의 Hazey.&lt;br/&gt;영구 저장의 zooloo75.&lt;br/&gt;Tags의 Marker와 Melbo.&lt;br/&gt;JAS의 Jeroen (너무 늦게 포함해서 죄송합니다)&lt;br/&gt;Advanced Towing의 Seth Duda.</Korean>
+                <Chinesesimp>Patcom by Hazey.&lt;br/&gt;Persistent Save by zooloo75。&lt;br/&gt;Tags by Marker 和 Melbo。&lt;br/&gt;JAS by Jeroen (抱歉这么晚才把你添加进来)。&lt;br/&gt;Advanced Towing by Seth Duda。</Chinesesimp>
+                <Italian>Patcom da Hazey.&lt;br/&gt;Salvataggio Persistente di zooloo75.&lt;br/&gt;Tags da Marker and Melbo.&lt;br/&gt;JAS da Jeroen (Scusa per averti incluso così tardi)&lt;br/&gt;Advanced Towing da Seth Duda.</Italian>
+                <Spanish>Patcom by Hazey.&lt;br/&gt;Persistent Save by zooloo75.&lt;br/&gt;Tags by Marker and Melbo.&lt;br/&gt;JAS by Jeroen (sorry for including you that late)&lt;br/&gt;Advanced Towing by Seth Duda.</Spanish>
+                <Polish>Patcom stworzony przez Hazey.&lt;br/&gt;Persistent Save stworzony przez zooloo75.&lt;br/&gt;Tags stworzony przez Marker i Melbo.&lt;br/&gt;JAS stworzony przez Jeroen.&lt;br/&gt;Advanced Towing stworzony przez Seth Duda.</Polish>
             </Key>
             <Key ID="STR_antistasi_journal_entry_header_Credits_2">
                 <Original>Mods</Original>
@@ -4585,6 +4585,21 @@
                 <Czech>Už něco nesete.</Czech>
                 <Spanish>Ya estas llevando algo</Spanish>
                 <Polish>Już coś nosisz.</Polish>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Last_Time_Purchase">
+                <Original>You already bought one, wait %1 seconds before you can buy another.</Original>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Insufficient_Funds">
+                <Original>You can't afford this Item.</Original>
+            </Key>
+            <Key ID="STR_A3A_Utility_Items_Purchase_Title">
+                <Original>Item Purchase</Original>
+            </Key>
+            <Key ID="STR_A3A_Packable_Objects_Title">
+                <Original>Packing Objects</Original>
+            </Key>
+            <Key ID="STR_A3A_Packable_Objects_refunding_error">
+                <Original>refunding money due to error</Original>
             </Key>
         </Container>
         <Container name="time_units">

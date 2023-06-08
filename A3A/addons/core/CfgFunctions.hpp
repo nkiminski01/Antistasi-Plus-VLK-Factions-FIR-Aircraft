@@ -5,6 +5,7 @@ class CfgFunctions
     {
         class AI {
             file = QPATHTOFOLDER(functions\AI);
+            class AIdrag {};
             class airbomb {};
             class AIreactOnKill {};
             class artySupport {};
@@ -52,6 +53,7 @@ class CfgFunctions
             class rearmCall {};
             class recallGroup {};
             class smokeCoverAuto {};
+            class staticAutoT {};
             class staticMGDrill {};
             class suppressingFire {};
             class surrenderAction {};
@@ -733,6 +735,9 @@ class CfgFunctions
             class buyItem {};
             class attachedObjects {};
             class dropObject {};
+            class medicalBox {};
+            class medicalBoxFill {};
+            class openDoorsTent {};
             class remainingFuel {};
         };
     };

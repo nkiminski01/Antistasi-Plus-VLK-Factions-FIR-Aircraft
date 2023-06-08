@@ -98,6 +98,13 @@ class Params
         texts[] = {"0","8","16","24","32","50"};
         default = 8;
     };
+    class A3A_reviveTime
+    {
+        title = "Minimum revive time for players";
+        values[] = {5,10,15};
+        texts[] = {"5 seconds","10 seconds","15 seconds"};
+        default = 10;
+    };
     class A3A_idleTimeout
     {
         title = $STR_params_afk;
@@ -120,6 +127,34 @@ class Params
         texts[] = {""};
         default = "";
     };
+    class rebuildAssets
+    {
+        title = $STR_params_rebuildassets;
+        values[] = {500,1500,2500,4000,5000};
+        texts[] = {"500","1500","2500","4000","5000"};
+        default = 2500;
+    };
+    class clearForest
+    {
+        title = $STR_params_cleanforest;
+        values[] = {70,140,210,280,350,420,490};
+        texts[] = {"70","140","210","280","350","420","490"};
+        default = 140;
+    };
+    class ArmsDealerPrice
+    {
+        title = $STR_params_blackmarketprice;
+        values[] = {1,1.5,2,3,4};
+        texts[] = {$STR_params_blackmarketpriceverylow,$STR_params_blackmarketpricelow,$STR_params_blackmarketpricemed,$STR_params_blackmarketpricehigh,$STR_params_blackmarketpriceveryhigh};
+        default = 2;
+    };
+    // class ArmsDealerGunsPrice
+    // {
+    //     title = $STR_params_blackmarketgunprice;
+    //     values[] = {0.7,1,1.5,2,2.5};
+    //     texts[] = {$STR_params_blackmarketpriceverylow,$STR_params_blackmarketpricelow,$STR_params_blackmarketpricemed,$STR_params_blackmarketpricehigh,$STR_params_blackmarketpriceveryhigh};
+    //     default = 1.5;
+    // };
     class magRepack
     {
         title = $STR_params_magRepack;
@@ -144,8 +179,8 @@ class Params
     class lootCrateDistance
     {
         title = $STR_params_lootCrateDistance;
-        values[] = {25, 50, 75, 100};
-        texts[] = {"25", "50", "75", "100"};
+        values[] = {25, 50, 75, 100, 200, 300};
+        texts[] = {"25", "50", "75", "100", "200", "300"};
         default = 50;
     };
     class playerIcons
@@ -186,15 +221,15 @@ class Params
     class aiControlTime
     {
         title = $STR_params_aiControlTime;
-        values[] = {30, 60, 90, 120};
-        texts[] = {"30", "60", "90", "120"};
+        values[] = {30, 60, 90, 120, 300};
+        texts[] = {"30", "60", "90", "120", "300"};
         default = 60;
     };
     class deathPenalty
     {
         title = $STR_params_deathPenalty;
-        values[] = {15, 30, 50, 75, 100};
-        texts[] = {"15%", "30%", "50%", "75%", "100%"};
+        values[] = {5, 15, 30, 50, 75, 100};
+        texts[] = {"5%", "15%", "30%", "50%", "75%", "100%"};
         default = 30;
     };
     class saveZeusBuildings
@@ -214,8 +249,8 @@ class Params
     class maxSupportPoints
     {
         title = $STR_params_maxSupportPoints;
-        values[] = {1,2,3,4,5,6};
-        texts[] = {"1","2","3","4","5","6"};
+        values[] = {1,2,3,4,5,6,7,8,9};
+        texts[] = {"1","2","3","4","5","6","7","8","9"};
         default = 3;
     };
     class unconsciousPossessAi

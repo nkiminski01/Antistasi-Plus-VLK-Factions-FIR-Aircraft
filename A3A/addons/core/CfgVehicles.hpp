@@ -6,4 +6,5 @@ class CfgVehicles
     {
         armor = 2000;
     };
+
 };
