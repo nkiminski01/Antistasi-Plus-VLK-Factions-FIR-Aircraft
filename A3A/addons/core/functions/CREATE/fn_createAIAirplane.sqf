@@ -16,6 +16,8 @@ private _props = [];
 private _dogs = []; //dogs are used in fn_location_createPatrols, removing this variable will break spawn
 
 private _positionX = getMarkerPos (_markerX);
+private _patrolSize = [_markerX] call A3A_fnc_sizeMarker;
+private _pos = [];
 
 private _size = [_markerX] call A3A_fnc_sizeMarker;
 //_garrison = garrison getVariable _markerX;
@@ -47,6 +49,7 @@ if (_radarType != "" && {_samType != ""}) then {
 
 			_soldiers append (units _aaGroup);
             _groups pushBack _aaGroup;
+			[_groupVeh, "Patrol_Area", 25, 100, 250, true, _positionX, false] call A3A_fnc_patrolLoop;
             _vehiclesX pushBack _aaVehicle;
 
 			//radar rotation
@@ -213,7 +216,7 @@ if (_additionalGarrison isNotEqualTo []) then {
 		private _group = [_positionX, _sideX, _groupTypes, false, true] call A3A_fnc_spawnGroup;
 		if !(isNull _group) then {
 			sleep 1;
-			_nul = [leader _group, _mrk, "LIMITED", "SAFE", "SPAWNED", "RANDOM", "NOVEH2"] spawn UPSMON_fnc_UPSMON;//TODO need delete UPSMON link
+			[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
 			_groups pushBack _group;
 			{[_x] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _group;
 		};
@@ -252,8 +255,7 @@ while {true} do {
 	private _typeVehX = selectRandom (_faction get "staticMortars");
 	private _veh = _typeVehX createVehicle _mortarPos;
 	_veh setDir (_spawnParameter select 1);
-	//_veh setPosATL (_spawnParameter select 0);
-	_nul=[_veh] spawn UPSMON_fnc_artillery_add;//TODO need delete UPSMON link
+	
 	private _unit = [_groupX, _typeUnit, _positionX, [], 0, "CAN_COLLIDE"] call A3A_fnc_createUnit;
 	[_unit,_markerX] call A3A_fnc_NATOinit;
 
@@ -263,6 +265,7 @@ while {true} do {
 	_vehiclesX pushBack _veh;
 
 	[_veh, _sideX] call A3A_fnc_AIVEHinit;
+	[_groupX] call A3A_fnc_artilleryAdd;
 	sleep 1;
 
 	{
@@ -434,11 +437,28 @@ while {_countX <= _radiusX} do {
 	_countX = _countX + 8;
 };
 for "_i" from 0 to (count _array - 1) do {
-	_groupX = if (_i == 0) then {[_positionX,_sideX, (_array select _i),true,false] call A3A_fnc_spawnGroup} else {[_positionX,_sideX, (_array select _i),false,true] call A3A_fnc_spawnGroup};
+	private _groupX = if (_i == 0) then {
+		[_positionX, _sideX, (_array select _i), true, false] call A3A_fnc_spawnGroup;
+	} else {
+		private _spawnPosition = [_positionX, 50, 100, 5, 0, -1, 0] call A3A_fnc_getSafePos;
+		[_spawnPosition, _sideX, (_array select _i), false, true] call A3A_fnc_spawnGroup;
+	};
+
 	_groups pushBack _groupX;
-	{[_x,_markerX] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _groupX;
-	if (_i == 0) then {_nul = [leader _groupX, _markerX, "LIMITED", "SAFE", "RANDOMUP", "SPAWNED", "NOVEH2", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON} else {_nul = [leader _groupX, _markerX, "LIMITED", "SAFE", "SPAWNED", "RANDOM", "NOVEH2", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON};
-};//TODO need delete UPSMON link
+
+	{
+		[_x, _markerX] call A3A_fnc_NATOinit; 
+		_soldiers pushBack _x;
+	} forEach units _groupX;
+	if (_i == 0) then {
+		// Sets first loop as garrison, returns additional defense groups if not enough positions found.
+		private _additionalGroups = [_groupX, getMarkerPos _markerX, _size] call A3A_fnc_patrolGroupGarrison;
+		_groups append _additionalGroups;
+	} else {
+		[_groupX, "Patrol_Defend", 0, 200, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
+	};
+};
+
 
 ["locationSpawned", [_markerX, "Airport", true]] call EFUNC(Events,triggerEvent);
 

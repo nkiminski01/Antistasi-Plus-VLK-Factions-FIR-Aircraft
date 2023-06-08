@@ -10,6 +10,8 @@ if(spawner getVariable _markerX == 2) exitWith {};
 Info_1("Spawning Military Base %1", _markerX);
 
 private _vehiclesX = [];
+private ["_markerX","_groups","_soldiers","_positionX","_num","_dataX","_prestigeOPFOR","_prestigeBLUFOR","_isAAF","_params","_frontierX","_array","_countX","_groupX","_dog","_grp","_sideX"];
+private _markerX = _this select 0;
 private _groups = [];
 private _soldiers = [];
 private _props = [];
@@ -398,11 +400,25 @@ while {_countX <= _radiusX} do {
 	_countX = _countX + 8;
 };
 for "_i" from 0 to (count _array - 1) do {
-	_groupX = if (_i == 0) then {[_positionX,_sideX, (_array select _i),true,false] call A3A_fnc_spawnGroup} else {[_positionX,_sideX, (_array select _i),false,true] call A3A_fnc_spawnGroup};
+	private _groupX = if (_i == 0) then {
+		[_positionX, _sideX, (_array select _i), true, false] call A3A_fnc_spawnGroup;
+	} else {
+		private _spawnPosition = [_positionX, 50, 100, 5, 0, -1, 0] call A3A_fnc_getSafePos;
+		[_spawnPosition, _sideX, (_array select _i), false, true] call A3A_fnc_spawnGroup;
+		};
 	_groups pushBack _groupX;
-	{[_x,_markerX] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _groupX;
-	if (_i == 0) then {_nul = [leader _groupX, _markerX, "LIMITED", "SAFE", "RANDOMUP","SPAWNED", "NOVEH2", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON} else {_nul = [leader _groupX, _markerX, "LIMITED", "SAFE","SPAWNED", "RANDOM","NOVEH2", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON};
-};//TODO need delete UPSMON link
+	{
+		[_x, _markerX] call A3A_fnc_NATOinit; 
+		_soldiers pushBack _x;
+	} forEach units _groupX;
+	if (_i == 0) then {
+		// Sets first loop as garrison, returns additional defense groups if not enough positions found.
+		private _additionalGroups = [_groupX, getMarkerPos _markerX, _size] call A3A_fnc_patrolGroupGarrison;
+		_groups append _additionalGroups;
+	} else {
+		[_groupX, "Patrol_Defend", 0, 200, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
+	};
+};
 
 ["locationSpawned", [_markerX, "Milbase", true]] call EFUNC(Events,triggerEvent);
 

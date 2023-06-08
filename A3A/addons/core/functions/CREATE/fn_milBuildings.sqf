@@ -4,7 +4,7 @@ FIX_LINE_NUMBERS()
 params ["_markerX", "_size", "_sideX", "_frontierX"];
 
 private _positionX = getMarkerPos _markerX;
-private _buildings = nearestObjects [_positionX, listMilBld, _size, true];
+private _buildings = nearestObjects [_positionX, A3A_milBuildingWhitelist, _size, true];
 _buildings = _buildings inAreaArray _markerX;
 
 if (_buildings isEqualTo []) exitWith {[grpNull,[],[]]};

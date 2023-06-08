@@ -26,14 +26,14 @@ if (_typeX isEqualType "") then {
 
     if (_typeX == FactionGet(reb,"unitCrew")) then {
         private _veh = FactionGet(reb,"staticMortar") createVehicle _positionX;
-        _nul=[_veh] spawn UPSMON_fnc_artillery_add;//TODO need delete UPSMON link
+        [_veh] call A3A_fnc_artilleryAdd;
         _unit assignAsGunner _veh;
         _unit moveInGunner _veh;
         [_veh, teamPlayer] call A3A_fnc_AIVEHinit;
     };
 
     if (_groups isEqualTo []) then {
-        _nul = [leader _groupX, _markerX, "LIMITED","SAFE","SPAWNED","NOVEH2","NOFOLLOW"] spawn UPSMON_fnc_UPSMON;//TODO need delete UPSMON link
+        [_groupX, "Patrol_Defend", 10, 150, -1, true, _positionX, true] call A3A_fnc_patrolLoop;
     };
 
     [_unit,_markerX] spawn {

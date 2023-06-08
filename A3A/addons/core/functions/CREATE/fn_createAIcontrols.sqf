@@ -101,11 +101,11 @@ if (_isControl) then {
 				[_dog,_groupX] spawn A3A_fnc_guardDog;
 			};
 
-		 	_nul = [leader _groupX, _markerX, "LIMITED","SAFE","SPAWNED","NOVEH2","NOFOLLOW"] spawn UPSMON_fnc_UPSMON;//TODO need delete UPSMON link
+		 	[_groupX, "Patrol_Defend", 0, 50, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
+			_groups pushBack _groupX;
 
 			// Forced non-spawner as they're very static.
 			{[_x,"",false] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _groupX;
-			_groups pushBack _groupX;
 		};
 	} else {
 		private _typeVehX = if (random 10 < (tierWar + (difficultyCoef / 2)) && {[_markerX] call A3A_fnc_isFrontline}) then {
@@ -165,7 +165,8 @@ if (_isControl) then {
 		};
 		private _groupX = [_positionX,_sideX, _cfg] call A3A_fnc_spawnGroup;
 
-		_nul = [leader _groupX, _markerX, "LIMITED","SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] spawn UPSMON_fnc_UPSMON;
+		[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
+		_groups pushBack _groupX;
 
 		private _typeVehX = selectRandom (_faction get "uavsPortable");
 		if !(isNil "_typeVehX") then {
@@ -177,7 +178,6 @@ if (_isControl) then {
 			private _groupUAV = group (crew _uav select 1);
 			{[_x] joinSilent _groupX; _pilots pushBack _x} forEach units _groupUAV;
 			deleteGroup _groupUAV;
-			_groups pushBack _groupX;
 		};
 		{[_x, "", false] call A3A_fnc_NATOinit} forEach units _groupX;
 	} else {

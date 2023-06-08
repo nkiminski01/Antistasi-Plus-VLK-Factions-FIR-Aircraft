@@ -22,33 +22,11 @@ if (_markerX != "Synd_HQ") then {
 			[_veh,"seaport"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_veh];
 		};
 	};
-	if (_markerX in resourcesX or {_markerX in factories}) then
-	{
-		if (not(_markerX in destroyedSites)) then {
-			if (daytime > 8 and {daytime < 18}) then {
-				private _groupCiv = createGroup civilian;
-				_groups pushBack _groupCiv;
-				for "_i" from 1 to 4 do {
-					if (spawner getVariable _markerX != 2) then {
-						private _civ = [_groupCiv, FactionGet(civ, "unitWorker"), _positionX, [],0, "NONE"] call A3A_fnc_createUnit;
-						_civ call A3A_fnc_CIVinit;
-						_civs pushBack _civ;
-						_civ setVariable ["markerX",_markerX,true];
-						sleep 0.5;
-						_civ addEventHandler ["Killed", {
-							if (({alive _x} count units group (_this select 0)) == 0) then {
-								private _markerX = (_this select 0) getVariable "markerX";
-								private _nameX = [_markerX] call A3A_fnc_localizar;
-								destroyedSites pushBackUnique _markerX;
-								publicVariable "destroyedSites";
-								["TaskFailed", ["", format [localize "STR_notifiers_resourcefactory_destoyed",_nameX]]] remoteExec ["BIS_fnc_showNotification",[teamPlayer,civilian]];
-							};
-						}];
-					};
-				};
-				//_nul = [_markerX,_civs] spawn destroyCheck;
-				_nul = [leader _groupCiv, _markerX, "LIMITED", "SAFE", "SPAWNED","NOFOLLOW", "NOSHARE","DORELAX","NOVEH2"] spawn UPSMON_fnc_UPSMON;//TODO need delete UPSMON link
-			};
+	if ((_markerX in resourcesX) or (_markerX in factories)) then {
+		private _spawnedCivilians = [_markerX, 4] call A3A_fnc_createResourceCiv;
+		if !(isNil "_spawnedCivilians") then {
+			_groups pushBack (_spawnedCivilians # 0);
+			_civs append (_spawnedCivilians # 1);
 		};
 	};
 };
@@ -72,7 +50,7 @@ if (_typeCrew in _garrison) then {
 		private _pos = [_positionX] call A3A_fnc_mortarPos;
 		private _veh = FactionGet(reb,"staticMortar") createVehicle _pos;
 		_vehiclesX pushBack _veh;
-		_nul=[_veh] spawn UPSMON_fnc_artillery_add;//TODO need delete UPSMON link
+		[_groupMortars] call A3A_fnc_artilleryAdd;
 		_unit assignAsGunner _veh;
 		_unit moveInGunner _veh;
 		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;
@@ -91,7 +69,7 @@ if (_typeCrew in _garrison) then {
 		if (isNull _groupMortars) then { _groupMortars = createGroup teamPlayer };
 		_unit = [_groupMortars, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
 		_unit moveInGunner _x;
-		_nul=[_x] spawn UPSMON_fnc_artillery_add;//TODO need delete UPSMON link
+		[_groupMortars] call A3A_fnc_artilleryAdd;
 	} else {
 		if (isNull _groupStatics) then { _groupStatics = createGroup teamPlayer };
 		_unit = [_groupStatics, (_garrison select _index), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
@@ -130,9 +108,12 @@ while {(spawner getVariable _markerX != 2) and (_countUnits < _totalUnits)} do {
 for "_i" from 0 to (count _groups) - 1 do {
 	_groupX = _groups select _i;
 	if (_i == 0) then {
-		_nul = [leader _groupX, _markerX, "LIMITED","SAFE","SPAWNED","RANDOMUP","NOVEH2","NOFOLLOW"] spawn UPSMON_fnc_UPSMON;//TODO need delete UPSMON link
+		private _garrisonGroup = [_groupX, getMarkerPos _markerX, _size] call A3A_fnc_patrolGroupGarrison;
+		if (count _garrisonGroup > 0) then {
+			_groups append _garrisonGroup;
+		};
 	} else {
-		_nul = [leader _groupX, _markerX, "LIMITED","SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] spawn UPSMON_fnc_UPSMON;//TODO need delete UPSMON link
+		[_groupX, "Patrol_Defend", 0, 150, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
 	};
 };
 ["locationSpawned", [_markerX, "RebelOutpost", true]] call EFUNC(Events,triggerEvent);
@@ -142,7 +123,7 @@ waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 { if (alive _x) then { deleteVehicle _x }; } forEach _soldiers;
 {deleteVehicle _x} forEach _civs;
 
-{deleteGroup _x} forEach _groups;
+{ deleteGroup _x } forEach _groups;
 deleteGroup _groupStatics;
 deleteGroup _groupMortars;
 
