@@ -67,7 +67,7 @@ if ((spawner getVariable _markerX != 2) and {!(sidesX getVariable [_markerX,side
 	] select _difficultX;
 
 	private _groupX = [_positionX, Occupants, _typeGroup] call A3A_fnc_spawnGroup;
-	_nul = [leader _groupX, _mrk, "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON;
+	[_groupX, "Patrol_Area", 25, 50, 100, true, _positionX, true] call A3A_fnc_patrolLoop;
 	{[_x] call A3A_fnc_NATOinit} forEach units _groupX;
 
 	_groups pushBack _groupX;

@@ -223,7 +223,7 @@ if (dateToNumber date < _dateLimitNum) then {
         ] call BIS_fnc_findSafePos;
         private _patrolGroup = [_position, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
         {[_x] call A3A_fnc_NATOinit;} forEach (units _patrolGroup);
-        _nul = [leader _patrolGroup, _marker, "SAFE","SPAWNED", "RANDOM", "NOVEH2", "LIMITED"] spawn UPSMON_fnc_UPSMON;
+        [_groupX, "Patrol_Area", 25, 50, 100, true, _positionX, true] call A3A_fnc_patrolLoop;
 
         _groups pushBack _patrolGroup;
     };

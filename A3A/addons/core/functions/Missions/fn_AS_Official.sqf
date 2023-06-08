@@ -47,7 +47,7 @@ if (_difficultX) then {
 
 _grp selectLeader _official;
 sleep 1;
-_nul = [leader _grp, _markerX, "LIMITED", "SAFE", "SPAWNED", "NOVEH", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON;
+[_grp, "Patrol_Area", 25, 50, 100, false, [], true] call A3A_fnc_patrolLoop;
 
 {[_x] call A3A_fnc_NATOinit; _x allowFleeing 0} forEach units _grp;
 

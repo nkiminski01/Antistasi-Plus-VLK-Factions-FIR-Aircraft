@@ -12,7 +12,7 @@ if (_resourcesFIA < MONEY_AMOUNT) exitWith {
     ] spawn SCRT_fnc_ui_showMessage;
 };
 
-private _ratingLoss = round (MONEY_AMOUNT / 100);
+private _ratingLoss = round (MONEY_AMOUNT / 100000);
 
 server setvariable ["resourcesFIA", _resourcesFIA - MONEY_AMOUNT, true];
 [-_ratingLoss,theBoss] call A3A_fnc_addScorePlayer;

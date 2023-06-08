@@ -30,7 +30,7 @@ private _taskId = "RES" + str A3A_taskCount;
 private _posHouse = [];
 private _countX = 0;
 //_houses = nearestObjects [_positionX, ["house"], 50];
-private _houses = (nearestObjects [_positionX, ["house"], 50]) select {!((typeOf _x) in UPSMON_Bld_remove)};
+private _houses = (nearestObjects [_positionX, ["house"], _radiusX]) select {!((typeOf _x) in A3A_buildingBlacklist)};
 private _houseX = "";
 private _potentials = [];
 for "_i" from 0 to (count _houses) - 1 do {
@@ -102,20 +102,12 @@ if (dateToNumber date < _dateLimitNum && {alive _x} count _POWs > 0) then {
 		_patrolPool = (_faction get "groupsFireteam");
 	};
 
-	_patrolMrk = createMarkerLocal [format ["%1patrolarea", floor random 10000], (position _houseX)];
-	_patrolMrk setMarkerShapeLocal "RECTANGLE";
-	_patrolMrk setMarkerSizeLocal [50,50];
-	_patrolMrk setMarkerTypeLocal "hd_warning";
-	_patrolMrk setMarkerColorLocal "ColorRed";
-	_patrolMrk setMarkerBrushLocal "DiagGrid";
-	_patrolMrk setMarkerAlphaLocal 0;
-
 	for "_i" from 1 to _patrolCount do {
 		private _patrolGroup = [_positionX, Rivals, (selectRandom _patrolPool)] call A3A_fnc_spawnGroup;
 		(units _patrolGroup) apply {
 			[_x] call A3A_fnc_NATOinit;
 		};
-		_nul = [leader _patrolGroup, _patrolMrk, "SAFE","SPAWNED", "RANDOM", "NOVEH2", "LIMITED"] spawn UPSMON_fnc_UPSMON;
+		[_groupX, "Patrol_Area", 25, 50, 100, true, _positionX, true] call A3A_fnc_patrolLoop;
 
 		_groups pushBack _patrolGroup;
 	};

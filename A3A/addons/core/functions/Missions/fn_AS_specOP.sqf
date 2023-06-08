@@ -39,7 +39,7 @@ if ((spawner getVariable _markerX != 2) and {!(sidesX getVariable [_markerX,side
 	private _specOps = selectRandom (_faction get "groupSpecOpsRandom");
 	_groupX = [_positionX, _sideX, _specOps] call A3A_fnc_spawnGroup;
 	{[_x] call A3A_fnc_NATOinit} forEach units _groupX;
-	_nul = [leader _groupX, _markerX, "SAFE","SPAWNED","RANDOM","NOVEH2","NOFOLLOW"] spawn UPSMON_fnc_UPSMON;
+	[_groupX, "Patrol_Area", 25, 50, 100, false, [], false] call A3A_fnc_patrolLoop;
 	Info_2("SpecOps Group Array: %1, Group: %2", str _specOps, str _groupX);
 };
 

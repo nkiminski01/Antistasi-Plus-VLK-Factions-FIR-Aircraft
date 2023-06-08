@@ -308,7 +308,7 @@ if (dateToNumber date < _dateLimitNum) then {
 	(units _barricadePatrolGroup) apply {
 		[_x,""] call A3A_fnc_NATOinit;
 	};
-	_nul = [leader _barricadePatrolGroup, _barricadeMrk, "LIMITED", "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON;
+	[_groupX, "Patrol_Area", 25, 50, 100, true, _positionX, true] call A3A_fnc_patrolLoop;
 	_groups pushBack _barricadePatrolGroup;
 
 	_truckMrk = createMarkerLocal [format ["%1patrolarea", floor random 10000], _barricadePos];
@@ -323,7 +323,7 @@ if (dateToNumber date < _dateLimitNum) then {
 	(units _truckPatrolGroup) apply {
 		[_x,""] call A3A_fnc_NATOinit;
 	};
-	_nul = [leader _truckPatrolGroup, _truckMrk, "LIMITED", "SAFE","SPAWNED", "NOVEH2", "NOFOLLOW"] spawn UPSMON_fnc_UPSMON;
+	[_groupX, "Patrol_Area", 25, 50, 100, true, _positionX, true] call A3A_fnc_patrolLoop;
 	_groups pushBack _truckPatrolGroup;
 };
 
