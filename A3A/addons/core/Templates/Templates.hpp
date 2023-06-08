@@ -315,98 +315,372 @@ class Templates
         description = $STR_A3AP_setupFactionsTab_vanilla_civ;
     };
 
-    // ************************************** RHS Factions *******************************************************
 
-    class RHS_Base : Base
+
+    //*************************************** VLK Factions *******************************************************
+
+    class VLK_Base : Base
     {
-        requiredAddons[] = {"rhsgref_main", "rhssaf_c_vehicles", "rhs_c_tanks", "RHS_US_A2Port_Armor"};
-        basepath = QPATHTOFOLDER(Templates\Templates\RHS);
-        logo = "\rhsusf\addons\rhsusf_main\data\rhs_logo_ca.paa";
-        priority = 30;
-        equipFlags[] = {"specialRHS"};
+        requiredAddons[] = {"UK3CB_Factions_Vehicles_SUV"};
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        basepath = QPATHTOFOLDER(Templates\Templates\VLK);
+        priority = 40;
+        equipFlags[] = {"VLK"};
     };
 
-    class RHS_NAPA : RHS_Base
+
+    class VLK_DRGVSRF : VLK_Base
     {
         side = "Reb";
-        flagTexture = "\rhsgref\addons\rhsgref_main\data\Flags\flag_NAPA_co.paa";
-        logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
-        name = "RHS NAPA";
-        file = "RHS_Reb_NAPA";
-        description = $STR_A3AP_setupFactionsTab_napa_3cbf;
+        flagTexture = "rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        name = "DRG AFRF";
+        file = "VLK_Reb_DRGVSRF";
+        description = $STR_A3AP_setupFactionsTab_DRG_VLK;
     };
 
-    class RHS_CDF : RHS_Base
+    class VLK_ION : VLK_Base
     {
-        side = "Occ";
-        flagTexture = "\rhsgref\addons\rhsgref_main\data\Flags\flag_cdf_co.paa";
-        name = "RHS CDF";
-        file = "RHS_AI_CDF";
-        maps[] = {"cup_chernarus_A3"};
-        climate[] = {"temperate"};
-        description = $STR_A3AP_setupFactionsTab_cdf;
+        side = "Reb";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_ION\Flag\ion_flag_co.paa";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        name = "PMC ION Services";
+        file = "VLK_Reb_ION";
+        description = $STR_A3AP_setupFactionsTab_ION_VLK;
     };
 
-    class RHS_AFRF : RHS_Base
+    class VLK_GB : VLK_Base
+    {
+        side = "Reb";
+        flagTexture = "\vlkpictures\datapack\Flag_GB1.paa";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        name = "Green Berets";
+        file = "VLK_Reb_GB";
+        description = $STR_A3AP_setupFactionsTab_Greenberretsreb;
+    };
+
+    // class VLK_CIA : VLK_Base
+    // {
+    //     side = "Reb";
+    //     flagTexture = "\vlkpictures\datapack\Flag_CIA1.paa";
+    //     logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+    //     name = "CIA";
+    //     file = "VLK_Reb_CIA";
+    //     description = $STR_A3AP_setupFactionsTab_ION_VLK;
+    // };
+
+   class VLK_AFRF : VLK_Base
     {
         side = "Inv";
         flagTexture = "rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
-        logo = "rhsafrf\addons\rhs_main\data\rhs_logo_ca.paa";
-        name = "RHS AFRF";
-        file = "RHS_AI_AFRF";
-        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
-    };
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        name = "Russian Army Temperate";
+        file = "VLK_AI_VSRF";
+        description = $STR_A3AP_setupFactionsTab_VSRF;
+        climate[] = {"temperate","tropical","arctic"};
+   };
 
-    class RHS_US_Army_Arid : RHS_Base
+   class VLK_AFRF_Arid : VLK_AFRF
+    {
+        name = "Russian Army Arid";
+        file = "VLK_AI_VSRF_Arid";
+        climate[] = {"arid"};
+   };
+
+   class VLK_AFRF_OCC : VLK_Base
     {
         side = "Occ";
-        flagTexture = "a3\data_f\flags\flag_us_co.paa";
-        name = "RHS US Army Arid";
-        file = "RHS_AI_US_Army_Arid";
+        flagTexture = "rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        name = "Russian Army Temperate";
+        file = "VLK_AI_VSRF";
+        description = $STR_A3AP_setupFactionsTab_VSRF;
+        climate[] = {"temperate","tropical","arctic"};
+   };
+
+   class VLK_AFRF_Arid_OCC : VLK_AFRF_OCC
+    {
+        name = "Russian Army Arid";
+        file = "VLK_AI_VSRF_Arid";
+        climate[] = {"arid"};
+   };   
+
+   class VLK_ION_AI : VLK_Base
+    {
+        side = "Occ";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_ION\Flag\ion_flag_alt_co.paa";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        name = "PMC ION Arid";
+        file = "VLK_AI_ION_Arid";
+        description = $STR_A3AP_setupFactionsTab_ION_VLK;
+        climate[] = {"arid"};
+   };
+
+   class VLK_ION_AI_OLIVE : VLK_ION_AI
+    {
+        name = "PMC ION Temperate";
+        file = "VLK_AI_ION_Olive";
+        climate[] = {"temperate","tropical","arctic"};
+   };
+
+      class VLK_ION_AI_INV : VLK_Base
+    {
+        side = "Inv";
+        flagTexture = "\UK3CB_Factions\addons\UK3CB_Factions_ION\Flag\ion_flag_alt_co.paa";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        name = "PMC ION Arid";
+        file = "VLK_AI_ION_Arid";
+        description = $STR_A3AP_setupFactionsTab_ION_VLK;
+        climate[] = {"arid"};
+   };
+
+   class VLK_ION_AI_OLIVE_INV : VLK_ION_AI_INV
+    {
+        name = "PMC ION Temperate";
+        file = "VLK_AI_ION_Olive";
+        climate[] = {"temperate","tropical","arctic"};
+   };
+
+    class VLK_US_Army_Arid : VLK_Base
+    {
+        side = "Occ";
+        flagTexture = "\vlkpictures\datapack\Flag_USA1.paa";
+        name = "United States Army Arid";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        file = "VLK_AI_US_Army_Arid";
         description = $STR_A3AP_setupFactionsTab_usaf;
         climate[] = {"arid"};
     };
-    class RHS_US_Army_Temperate : RHS_US_Army_Arid
+
+    class VLK_US_Army_Temperate : VLK_US_Army_Arid
     {
-        name = "RHS US Army Temperate";
-        file = "RHS_AI_US_Army_Temperate";
+        name = "United States Army Temperate";
+        file = "VLK_AI_US_Army_Temperate";
         climate[] = {"temperate","tropical","arctic"};
     };
 
-    class RHS_USMC_Arid : RHS_Base
+    class VLK_US_Army_Arid_INV : VLK_Base
     {
-        side = "Occ";
-        flagTexture = "a3\data_f\flags\flag_us_co.paa";
-        name = "RHS USMC Arid";
-        file = "RHS_AI_USMC_Arid";
-        description = $STR_A3AP_setupFactionsTab_usmc;
+        side = "Inv";
+        flagTexture = "\vlkpictures\datapack\Flag_USA1.paa";
+        name = "United States Army Arid";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        file = "VLK_AI_US_Army_Arid";
+        description = $STR_A3AP_setupFactionsTab_usaf;
         climate[] = {"arid"};
     };
-    class RHS_USMC_Temperate : RHS_USMC_Arid
+
+    class VLK_US_Army_Temperate_INV : VLK_US_Army_Arid_INV
     {
-        name = "RHS USMC Temperate";
-        file = "RHS_AI_USMC_Temperate";
+        name = "United States Army Temperate";
+        file = "VLK_AI_US_Army_Temperate";
         climate[] = {"temperate","tropical","arctic"};
     };
 
-    class RHS_CHDKZ : RHS_Base
+    class VLK_FRANCE_Arid : VLK_Base
     {
-        side = "Riv";
-        flagTexture = "\rhsgref\addons\rhsgref_main\data\flag_chdkz_co.paa";
-        logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
-        name = "RHS CHDKZ";
-        file = "RHS_Riv_CHDKZ";
-        description = $STR_A3AP_setupFactionsTab_chdkz;
+        side = "Occ";
+        flagTexture = "\vlkpictures\datapack\Flag_France.paa";
+        name = "French Army Arid";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        file = "VLK_AI_France_Arid";
+        description = $STR_A3AP_setupFactionsTab_france;
+        climate[] = {"arid"};
     };
 
-    class RHS_Civ : RHS_Base
+    class VLK_FRANCE_Temperate : VLK_FRANCE_Arid
     {
-        side = "Civ";
-        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
-        logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
-        name = "RHS";
-        file = "RHS_Civ";
+        name = "French Army Temperate";
+        file = "VLK_AI_France_Temperate";
+        climate[] = {"temperate","tropical","arctic"};
     };
+
+    class VLK_FRANCE_Arid_INV : VLK_Base
+    {
+        side = "Inv";
+        flagTexture = "\vlkpictures\datapack\Flag_France.paa";
+        name = "French Army Arid";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        file = "VLK_AI_France_Arid";
+        description = $STR_A3AP_setupFactionsTab_france;
+        climate[] = {"arid"};
+    };
+
+    class VLK_FRANCE_Temperate_INV : VLK_FRANCE_Arid_INV
+    {
+        name = "French Army Temperate";
+        file = "VLK_AI_France_Temperate";
+        climate[] = {"temperate","tropical","arctic"};
+    };
+
+    class VLK_GREENBERETS_Temperate : VLK_Base
+    {
+        side = "Riv";
+        flagTexture = "\vlkpictures\datapack\Flag_GreenBerets";
+        name = "Green Berets Temperate";
+        file = "VLK_Riv_GreenBerets_Temperate";
+        description = $STR_A3AP_setupFactionsTab_Greenberretsriv;
+        climate[] = {"temperate","tropical","arctic"};
+    };
+
+    class VLK_GREENBERETS_Arid : VLK_GREENBERETS_Temperate
+    {
+        name = "Green Berets Arid";
+        file = "VLK_Riv_GreenBerets_Arid";
+        climate[] = {"arid"};
+    };
+
+    class VLK_UN_Temperate : VLK_Base
+    {
+        side = "Occ";
+        flagTexture = "\vlkpictures\datapack\Flag_UN.paa";
+        name = "United Nations Temperate";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        file = "VLK_AI_UN_Temperate";
+        description = $STR_A3AP_setupFactionsTab_un;
+        climate[] = {"temperate","tropical","arctic"};
+    };
+
+    class VLK_UN_Arid : VLK_UN_Temperate
+    {
+        name = "United Nations Arid";
+        file = "VLK_AI_UN_Arid";
+        climate[] = {"arid"};
+    };
+
+    class VLK_UN_Temperate_INV : VLK_Base
+    {
+        side = "Inv";
+        flagTexture = "\vlkpictures\datapack\Flag_UN.paa";
+        name = "United Nations Temperate";
+        logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+        file = "VLK_AI_UN_Temperate";
+        description = $STR_A3AP_setupFactionsTab_un;
+        climate[] = {"temperate","tropical","arctic"};
+    };
+
+    class VLK_UN_Arid_INV : VLK_UN_Temperate_INV
+    {
+        name = "United Nations Arid";
+        file = "VLK_AI_UN_Arid";
+        climate[] = {"arid"};
+    };
+
+    //************************************** VLK Chinese Base *****************************************************
+
+    // class VLK_Chinise_Base : Base
+    // {
+    //    requiredAddons[] = {"CSK181", "PLAW_Core", "LK_FNCS"};
+    //    basepath = QPATHTOFOLDER(Templates\Templates\VLK);
+    //    logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+    //    priority = 30;
+    //    equipFlags[] = {"VLK"};
+    // };
+
+    // class VLK_China_Temperate : VLK_Chinise_Base   //// FACTION TEMPLATE BROKEN
+    // {
+    //     side = "Occ";
+    //     flagTexture = "\vlkpictures\datapack\Flag_China.paa";
+    //     name = "Chinese Army Temperate";
+    //     logo = "\vlkpictures\datapack\VLK_Mod_Logo.paa";
+    //     file = "VLK_AI_China_Temperate";
+    //     description = $STR_A3AP_setupFactionsTab_usaf;
+    //     climate[] = {"temperate","tropical","arctic", "arid"};
+    // };
+
+
+    // ************************************** RHS Factions ******************************************************* /// CAN'T RUN DUE CUP
+
+    //class RHS_Base : Base
+    //{
+    //    requiredAddons[] = {"rhsgref_main", "rhssaf_c_vehicles", "rhs_c_tanks", "RHS_US_A2Port_Armor"};
+    //    basepath = QPATHTOFOLDER(Templates\Templates\RHS);
+    //    logo = "\rhsusf\addons\rhsusf_main\data\rhs_logo_ca.paa";
+    //    priority = 30;
+    //    equipFlags[] = {"specialRHS"};
+    //};
+
+//    class RHS_NAPA : RHS_Base
+//    {
+//        side = "Reb";
+//        flagTexture = "rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
+//        logo = "rhsafrf\addons\rhs_main\data\rhs_logo_ca.paa";
+//        name = "DRG VSRF";
+//        file = "RHS_Reb_NAPA";
+//        description = $STR_A3AP_setupFactionsTab_DRG_VLK;
+//    };
+
+//    class RHS_CDF : RHS_Base
+//    {
+//        side = "Occ";
+//        flagTexture = "\rhsgref\addons\rhsgref_main\data\Flags\flag_cdf_co.paa";
+//        name = "RHS CDF";
+//        file = "RHS_AI_CDF";
+//        maps[] = {"cup_chernarus_A3"};
+//        climate[] = {"temperate"};
+//        description = $STR_A3AP_setupFactionsTab_cdf;
+//    };
+
+//    class RHS_AFRF : RHS_Base
+//    {
+//        side = "Inv";
+//        flagTexture = "rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
+//        logo = "rhsafrf\addons\rhs_main\data\rhs_logo_ca.paa";
+//        name = "RHS AFRF";
+//        file = "RHS_AI_AFRF";
+//        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
+//    };
+
+//    class RHS_US_Army_Arid : RHS_Base
+//    {
+//        side = "Occ";
+//        flagTexture = "a3\data_f\flags\flag_us_co.paa";
+//        name = "RHS US Army Arid";
+//        file = "RHS_AI_US_Army_Arid";
+//        description = $STR_A3AP_setupFactionsTab_usaf;
+//        climate[] = {"arid"};
+//    };
+//    class RHS_US_Army_Temperate : RHS_US_Army_Arid
+//    {
+//        name = "RHS US Army Temperate";
+//        file = "RHS_AI_US_Army_Temperate";
+//        climate[] = {"temperate","tropical","arctic"};
+//    };
+//
+//    class RHS_USMC_Arid : RHS_Base
+//    {
+//        side = "Occ";
+//        flagTexture = "a3\data_f\flags\flag_us_co.paa";
+//        name = "RHS USMC Arid";
+//        file = "RHS_AI_USMC_Arid";
+//        description = $STR_A3AP_setupFactionsTab_usmc;
+//        climate[] = {"arid"};
+//    };
+//    class RHS_USMC_Temperate : RHS_USMC_Arid
+//    {
+//        name = "RHS USMC Temperate";
+//        file = "RHS_AI_USMC_Temperate";
+//        climate[] = {"temperate","tropical","arctic"};
+//    };
+//
+//    class RHS_CHDKZ : RHS_Base
+//    {
+//        side = "Riv";
+//        flagTexture = "\rhsgref\addons\rhsgref_main\data\flag_chdkz_co.paa";
+//        logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
+//        name = "RHS CHDKZ";
+//        file = "RHS_Riv_CHDKZ";
+//        description = $STR_A3AP_setupFactionsTab_chdkz;
+//    };
+//
+//    class RHS_Civ : RHS_Base
+//    {
+//        side = "Civ";
+//        flagTexture = "a3\data_f\flags\flag_fia_co.paa";
+//        logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
+//        name = "RHS";
+//        file = "RHS_Civ";
+//    };
 
 
     // ************************************** 3CB Factions *******************************************************
@@ -581,31 +855,31 @@ class Templates
         description = $STR_A3AP_setupFactionsTab_ard;
     };
 
-    class 3CBF_AFRF : 3CBF_Base
-    {
-        side = "Inv";
-        flagTexture = "rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
-        name = "3CBF AFRF";
-        file = "3CBF_AI_AFRF";
-        climate[] = {"arid","temperate","tropical","arctic"};
-        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
-    };
+    //class 3CBF_AFRF : 3CBF_Base
+    //{
+    //    side = "Inv";
+    //    flagTexture = "rhsafrf\addons\rhs_main\data\flag_rus_co.paa";
+    //    name = "3CBF AFRF";
+    //    file = "3CBF_AI_AFRF";
+    //    climate[] = {"arid","temperate","tropical","arctic"};
+    //    description = $STR_A3AP_setupFactionsTab_aegis_afrf;
+    //};
 
-    class 3CBF_US_Army_Arid : 3CBF_Base
-    {
-        side = "Occ";
-        flagTexture = "a3\data_f\flags\flag_us_co.paa";
-        name = "3CBF US Army Arid";
-        file = "3CBF_AI_US_Army_Arid";
-        description = $STR_A3AP_setupFactionsTab_usaf;
-        climate[] = {"arid"};
-    };
-    class 3CBF_US_Army_Temperate : 3CBF_US_Army_Arid
-    {
-        name = "3CBF US Army Temperate";
-        file = "3CBF_AI_US_Army_Temperate";
-        climate[] = {"temperate","tropical","arctic"};
-    };
+    //class 3CBF_US_Army_Arid : 3CBF_Base
+    //{
+    //    side = "Occ";
+    //    flagTexture = "a3\data_f\flags\flag_us_co.paa";
+    //    name = "3CBF US Army Arid";
+    //    file = "3CBF_AI_US_Army_Arid";
+    //    description = $STR_A3AP_setupFactionsTab_usaf;
+    //    climate[] = {"arid"};
+    //};
+    //class 3CBF_US_Army_Temperate : 3CBF_US_Army_Arid
+    //{
+    //    name = "3CBF US Army Temperate";
+    //    file = "3CBF_AI_US_Army_Temperate";
+    //    climate[] = {"temperate","tropical","arctic"};
+    //};
 
     class 3CBF_USMC_Arid : 3CBF_Base
     {
