@@ -6,9 +6,12 @@ logoOver = QPATHTOFOLDER(Pictures\antistasi_plus_logo.paa);
 logoSmall = QPATHTOFOLDER(Pictures\antistasi_plus_logo_small.paa);
 picture = QPATHTOFOLDER(Pictures\antistasi_plus_overview.paa);
 #else
-name = "Antistasi Plus";
+name = "Antistasi Plus VLK Factions";
 #endif
-author = "Socrates";
+author = "Velka";
+logo = "VLK_Mod_Logo.paa";
+logoSmall = "VLK_Mod_Logo_Small.paa";
+logoOver = "VLK_Mod_Logo_Over.paa";
 description = "";
 tooltip = "Antistasi Plus";
 tooltipOwned = "Antistasi Plus";
