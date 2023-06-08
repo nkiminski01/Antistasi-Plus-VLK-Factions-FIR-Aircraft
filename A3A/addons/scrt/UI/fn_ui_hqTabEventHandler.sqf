@@ -28,7 +28,7 @@ if(_mode isEqualTo "ADD") then {
             };
             
             private _resourcesFIA = server getVariable "resourcesFIA";
-            if (_resourcesFIA < 5000) exitWith {
+            if (_resourcesFIA < rebuildAssets) exitWith {
                 [
                     localize "STR_notifiers_fail_type",
                     localize "STR_notifiers_rebuild_assets_header",  
