@@ -1,3 +1,5 @@
+!!!! Be careful, when you convert vlkpictures to pbo via Visual Studio Code, .paa images (flags) are not displayed as they should, use other software to convert this folder
+
 Description in english:
 
 This modification is based on Antistasi Plus 2.1.11 from Soctates.
@@ -59,6 +61,8 @@ Discord Rich Presence by ConnorAU
 Antistasi Plus by Socrates
 Antistasi Plus VLK Faction by Velka
 
+
+Осторожно, когда вы конвертируете vlkpictures в pbo через Visual Studio Code, .paa картинки (флаги) не отображаются как должны, используйте другое ПО для конвертации данной папки
 
 Описание на русском:
 
