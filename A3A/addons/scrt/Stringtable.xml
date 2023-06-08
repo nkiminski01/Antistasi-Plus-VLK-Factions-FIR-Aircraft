@@ -232,7 +232,7 @@
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_aegis_afrf">
                 <Original>Armed Forces of Russia.\nModern nomenclature of weapons and vehicles strangely synergizes with archaic mid-20th century's equipment.</Original>
-                <Russian>ВС России.\nСовременная номеклатура вооружений и техники странным образом синергирует с архаичной экипировкой времён середины 20 века.</Russian>
+                <Russian>ВС России.\nСовременная номеклатура вооружений и техники.</Russian>
                 <Chinesesimp>俄罗斯武装力量。武器和车辆的现代命名法奇怪地与20世纪中期的古旧装备协同起来。</Chinesesimp>
                 <Korean>러시아군.\n무기와 차량의 현대 명명법은 이상하게도 20세기 중반의 구식 장비와 시너지 효과를 냅니다.</Korean>
             </Key>
@@ -260,6 +260,21 @@
                 <Chinesesimp>国家党（NAPA）。\n有人要测试一下，用铁拳和木柄手榴弹能走多远。</Chinesesimp>
                 <Korean>체르나루스 국민당(NAPA).\n누군가는 판처파우스트와 막대형 수류탄으로 얼마나 멀리 갈 수 있는지 시험해야 합니다.</Korean>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_DRG_VLK">
+                <Original>Deversion and reconnaissance group of the Russian Army.\n \nA special purpose unit used for reconnaissance and sabotage in the enemy's rear during the war and pre-war period in order to disorganize rear institutions, destroy or temporarily disable the most important industrial enterprises, military facilities, transport, communications, as well as collecting information about the enemy.\n \nStrengths:\n - tanks\n - IFV\n - helicopters\n - aviation\n - artillery\n \nWeaknesses:\n - weak outdated starting equipment\n - slow and heavy transport</Original>
+                <Russian>Диверсионно-разведывательная группа Армии России.\n \nПодразделение специального назначения, используемое для разведки и диверсий в тылу противника в военное и предвоенное время с целью дезорганизации тыловых учреждений, уничтожения или временного выведения из строя важнейших промышленных предприятий, военных объектов, транспорта, связи, а также сбора информации о противнике.\n \nСильные стороны:\n - танки\n - бмп\n - вертолеты\n - авиация\n - артиллерия\n \nСлабости:\n - слабое устаревшее стартовое снаряжение\n - медленный и тяжелый транспорт </Russian>
+                <Chinesesimp>Deversion and reconnaissance group of the Russian Army.\n \nA special purpose unit used for reconnaissance and sabotage in the enemy's rear during the war and pre-war period in order to disorganize rear institutions, destroy or temporarily disable the most important industrial enterprises, military facilities, transport, communications, as well as collecting information about the enemy.\n \nStrengths:\n - tanks\n - IFV\n - helicopters\n - aviation\n - artillery\n \nWeaknesses:\n - weak outdated starting equipment\n - slow and heavy transport</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_ION_VLK">
+                <Original>PMC "ION".\n \nION, Inc. is a private military company, specialising in security solutions and providing services tailored to specialist and high-risk environments.\n \nStrengths:\n - good starting equipment\n - large number of mobile vehicles and helicopters\n - modern weapons systems in transport. \n \nWeaknesses:\n - no modern aviation\n - no heavy armored vehicles\n - no tanks\n - no mobile air defenses\n - no artillery (exc. Mortar)</Original>
+                <Russian>ЧВК "ИОН".\n \nION, Inc. - частная военная компания, специализирующаяся на решениях в области безопасности и предоставляющая услуги, адаптированные к специальным условиям и условиям повышенного риска.\n \nСильные стороны:\n - хорошее стартовое снаряжение\n - большое количество мобильных транспортных средств и вертолетов\n - современные оружейнык системы на транспорте.\n \nСлабости:\n - нет современной авиации\n - нет тяжелой бронетехники\n - нет танков\n - нет подвижных ПВО.</Russian>
+                <Chinesesimp>PMC "ION".\n \nION, Inc. is a private military company, specialising in security solutions and providing services tailored to specialist and high-risk environments.\n \nStrengths:\n - good starting equipment\n - large number of mobile vehicles and helicopters\n - modern weapons systems in transport. \n \nWeaknesses:\n - no modern aviation\n - no heavy armored vehicles\n - no tanks\n - no mobile air defenses\n - no artillery (exc. Mortar)</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_VSRF">
+                <Original>Armed Forces of the Russian Federation. \nThe State military organization of the Russian Federation, designed to repel aggression directed against it, for the armed protection of the territorial integrity and inviolability of its territory, as well as to perform tasks in accordance with international treaties.</Original>
+                <Russian>Вооружённые силы Российской Федерации. \nГосударственная военная организация Российской Федерации, предназначенная для отражения агрессии, направленной против неё, для вооружённой защиты территориальной целостности и неприкосновенности её территории, а также для выполнения задач в соответствии с международными договорами.</Russian>
+                <Chinesesimp>Armed Forces of the Russian Federation. \nThe State military organization of the Russian Federation, designed to repel aggression directed against it, for the armed protection of the territorial integrity and inviolability of its territory, as well as to perform tasks in accordance with international treaties.</Chinesesimp>
+            </Key>                          
             <Key ID="STR_A3AP_setupFactionsTab_ccm_3cbf">
                 <Original>Chernarus Communist Militia (CCM).\nPPsH's, Mosin-Nagants and a lot of comrades.</Original>
                 <Russian>Коммунистическое ополчение Чернаруси (CCM).\nППШ, винтовки Мосина и множество товарищей.</Russian>
@@ -275,6 +290,12 @@
             <Key ID="STR_A3AP_setupFactionsTab_usaf">
                 <Original>United States Army.\nAggressive, overwhelming force.</Original>
                 <Russian>Армия США.\nАгрессивная, ошеломляющая сила.</Russian>
+                <Chinesesimp>美国陆军\侵略性的、压倒性的力量。</Chinesesimp>
+                <Korean>미 육군.\n공격적이고 압도적인 군사력.</Korean>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_un">
+                <Original>UN Peacekeeping Force.\nThe armed contingents of the UN Member States allocated in accordance with the UN Charter in order to prevent or eliminate threats to peace and security through joint coercive actions if economic and political measures prove or prove insufficient.</Original>
+                <Russian>Миротворческие силы ООН.\nВооружённые контингенты государств - членов ООН, выделенные согласно Уставу ООН в целях предотвращения или ликвидации угрозы миру и безопасности путём совместных принудительных действий, если меры экономического и политического характера окажутся или оказались недостаточными.</Russian>
                 <Chinesesimp>美国陆军\侵略性的、压倒性的力量。</Chinesesimp>
                 <Korean>미 육군.\n공격적이고 압도적인 군사력.</Korean>
             </Key>
@@ -320,15 +341,32 @@
                 <Chinesesimp>CHDKZ.\n东欧准军事团体，由具有不同背景的人组成——从罪犯和叛逃者到高度专业的雇佣兵和士兵。</Chinesesimp>
                 <Korean>체다키(ChDKZ).\n범죄자와 탈주자에서부터 고도로 훈련된 전문 용병과 군인에 이르기까지 다양한 배경을 가진 동유럽계 준군사조직입니다.</Korean>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_Greenberretsriv">
+                <Original>"Green Berets".\nSpecial units of the US Army designed to conduct guerrilla warfare and organize special operations other than the war outside the United States, including the overthrow of governments objectionable to the United States in third countries.</Original>
+                <Russian>«Зелёные береты».\nОтборные подразделения Армии США, предназначенные для ведения партизанской войны и организации специальных операций отличных от войны за пределами США, включая свержение неугодных США правительств в третьих странах.</Russian>
+                <Chinesesimp>"Green Berets".\nSpecial units of the US Army designed to conduct guerrilla warfare and organize special operations other than the war outside the United States, including the overthrow of governments objectionable to the United States in third countries.</Chinesesimp>
+                <Korean>"Green Berets".\nSpecial units of the US Army designed to conduct guerrilla warfare and organize special operations other than the war outside the United States, including the overthrow of governments objectionable to the United States in third countries.</Korean>
+            </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_Greenberretsreb">
+                <Original>"Green Berets".\n \nSpecial units of the US Army designed to conduct guerrilla warfare and organize special operations other than the war outside the United States, including the overthrow of governments objectionable to the United States in third countries.\n \nStrengths:\n - large number of modern light armored vehicles\n - aviation\n - drones\n - artillery \n \nWeaknesses:\n - vehicle prices\n - starting equipment</Original>
+                <Russian>«Зелёные береты».\n \nОтборные подразделения Армии США, предназначенные для ведения партизанской войны и организации специальных операций отличных от войны за пределами США, включая свержение неугодных США правительств в третьих странах.\n \nСильные стороны:\n - большое количество современной легкобронированной техники\n - авиация\n - дроны\n \nСлабости:\n - цены на технику\n - начальное снаряжение</Russian>
+                <Chinesesimp>"Green Berets".\n \nSpecial units of the US Army designed to conduct guerrilla warfare and organize special operations other than the war outside the United States, including the overthrow of governments objectionable to the United States in third countries.\n \nStrengths:\n - large number of modern light armored vehicles\n - aviation\n - drones\n - artillery \n \nWeaknesses:\n - prices\n - starting equipment</Chinesesimp>
+                <Korean>"Green Berets".\n \nSpecial units of the US Army designed to conduct guerrilla warfare and organize special operations other than the war outside the United States, including the overthrow of governments objectionable to the United States in third countries.\n \nStrengths:\n - large number of modern light armored vehicles\n - aviation\n - drones\n - artillery \n \nWeaknesses:\n - prices\n - starting equipment</Korean>
+            </Key>
             <Key ID="STR_A3AP_setupFactionsTab_ion">
                 <Original>ION Services.\nION Services, Incorporated is a U.S.-based private military company.</Original>
                 <Russian>ION Services.\nION Services, Incorporated - это частная военная компания с штаб-квартирой в США.</Russian>
                 <Chinesesimp>ION Services.\nION Services，公司是一家总部设在美国的私营军事公司</Chinesesimp>
                 <Korean>ION 서비스(ION).\nION 서비스 유한회사는 미국에 본사를 두고 있는 민간군사기업입니다.</Korean>
             </Key>
+            <Key ID="STR_A3AP_setupFactionsTab_france">
+                <Original>French Armed Forces.\nThe formation of the French Republic, created for the armed protection of its interests and territories, including overseas. In general, France is one of the few countries in the armed forces of which there is almost a full range of modern weapons and military equipment of its own production - from small arms to nuclear strike aircraft carriers.</Original>
+                <Russian>Вооружённые силы Франции.\nФормирование Французской Республики, созданное для вооружённой защиты её интересов и территорий, в том числе и заморских. В целом, Франция является одной из немногих стран, в составе вооружённых сил которой есть почти полный спектр современных вооружений и военной техники собственного производства - от стрелкового оружия до ударных атомных авианосцев.</Russian>
+                <Chinesesimp>French Armed Forces.\nThe formation of the French Republic, created for the armed protection of its interests and territories, including overseas. In general, France is one of the few countries in the armed forces of which there is almost a full range of modern weapons and military equipment of its own production - from small arms to nuclear strike aircraft carriers.</Chinesesimp>
+                <Korean>French Armed Forces.\nThe formation of the French Republic, created for the armed protection of its interests and territories, including overseas. In general, France is one of the few countries in the armed forces of which there is almost a full range of modern weapons and military equipment of its own production - from small arms to nuclear strike aircraft carriers.</Korean>
             <Key ID="STR_A3AP_setupFactionsTab_ti">
                 <Original>Takistan Insurgents (TI).\nMembers of various militant movements across the Middle East.</Original>
-                <Russian>Повстанцы Таксистана (TI).\nЧлены различных военизированных движений на Ближнем Востоке.</Russian>
+                <Russian>Повстанцы Такистана (TI).\nЧлены различных военизированных движений на Ближнем Востоке.</Russian>
                 <Chinesesimp>塔吉克斯坦叛乱分子（TI）。\n整个中东地区各种激进运动的成员。</Chinesesimp>
                 <Korean>타키스탄 반군(TI).\n중동 전역에 걸쳐 있는 다양한 전투 행동을 하는 구성원들입니다.</Korean>
             </Key>
@@ -1307,8 +1345,8 @@
                 <Korean>이제 나라는 우리 것입니다!</Korean>
             </Key>
             <Key ID="STR_end_mission_victory_desc">
-                <Original>The population of the country loves you!&lt;br/&gt;The brave soldiers have proven their valour, and Petros, the elected new Prime Minister, could at last to have a nice holidays. A deserved rest and honor for all participated soldiers too.</Original>
-                <Russian>Население страны любит вас!&lt;br/&gt;Отважные солдаты доказали свою доблесть и Петрос, избранный новым премьер-министром, наконец-то сможет хорошо провести отпуск. Заслуженный отдых и почёт всем участвовавшим бойцам тоже.</Russian>
+                <Original>The population of the country loves you!&lt;br/&gt;The brave soldiers have proven their valour, and Field Commanders, the elected new Prime Minister, could at last to have a nice holidays. A deserved rest and honor for all participated soldiers too.</Original>
+                <Russian>Население страны любит вас!&lt;br/&gt;Отважные солдаты доказали свою доблесть и Полевой командир, избранный новым премьер-министром, наконец-то сможет хорошо провести отпуск. Заслуженный отдых и почёт всем участвовавшим бойцам тоже.</Russian>
                 <Chinesesimp>全国人民都爱你!&lt;br/&gt;勇敢的士兵们已经证明了他们的英勇，当选的新总理Petros也终于可以过一个愉快的假期。所有参战士兵也得到了应有的休息和荣誉。</Chinesesimp>
                 <Korean>국민들이 당신들을 좋아합니다!&lt;br/&gt;용감한 군인들은 그들의 용기를 증명해냈고, 선출된 새 총리인 페트로스는 마침내 멋진 휴일을 보낼 수 있었습니다. 참가한 모든 병사들에게도 마땅히 휴식과 명예가 주어져야 합니다.</Korean>
             </Key>
@@ -3151,10 +3189,10 @@
                 <Korean>%1이(가) 재건축되었습니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_rebuild_assets_info">
-                <Original>Click on any friendly marker to rebuild radio towers and military buildings there.&lt;br/&gt;Cost: %1%2.</Original>
-                <Russian>Нажмите на любой дружественный маркер, чтобы восстановить там радиовышки и военные здания/укрепления.&lt;br/&gt;Стоимость: %1%2</Russian>
-                <Chinesesimp>单击任何友方标记以重建那里的无线电塔和军事建筑。&lt;br/&gt;成本: %1%2.</Chinesesimp>
-                <Korean>통신탑과 군용 건물을 재건축하려면 아무 마커를 클릭하십시오.&lt;br/&gt;가격: %1%2.</Korean>
+                <Original>Click on any friendly marker to rebuild radio towers and military buildings there.</Original>
+                <Russian>Нажмите на любой дружественный маркер, чтобы восстановить там радиовышки и военные здания/укрепления.</Russian>
+                <Chinesesimp>单击任何友方标记以重建那里的无线电塔和军事建筑。</Chinesesimp>
+                <Korean>통신탑과 군용 건물을 재건축하려면 아무 마커를 클릭하십시오.</Korean>
             </Key>
             <Key ID="STR_notifiers_rebuild_assets_radiotower_success">
                 <Original>%1 and it's radiotower has been rebuilt.</Original>
@@ -3163,10 +3201,10 @@
                 <Korean>%1와(과) 그 곳의 통신탑은 재건축되었습니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_rebuild_assets_not_enough_money">
-                <Original>Not enough money to rebuild assets there.&lt;br/&gt;Cost: 5000%1</Original>
-                <Russian>Не хватает денег, чтобы восстановить постройки и радиовышки на этом месте.&lt;br/&gt;Стоимость: 5000%1.</Russian>
-                <Chinesesimp>没有足够的钱在那里重建资产。&lt;br/&gt;成本: 5000%1</Chinesesimp>
-                <Korean>그 곳에 자산을 재건축할 자금이 부족합니다.&lt;br/&gt;가격: 5000%1</Korean>
+                <Original>Not enough money to rebuild assets there.</Original>
+                <Russian>Не хватает денег, чтобы восстановить постройки и радиовышки на этом месте.</Russian>
+                <Chinesesimp>没有足够的钱在那里重建资产。</Chinesesimp>
+                <Korean>그 곳에 자산을 재건축할 자금이 부족합니다.</Korean>
             </Key>
             <Key ID="STR_notifiers_rebuild_assets_not_belong">
                 <Original>Selected location does not belong to %1.</Original>
@@ -3641,9 +3679,9 @@
                 <Korean>사망하거나 플레이어가 조종하는 부대는 주둔지에 추가할 수 없습니다.</Korean>
             </Key>
             <Key ID="STR_garrison_error_no_specific_units">
-                <Original>Static crewmen, prisoners, refugees, Petros or unknown units can can't be added to any garrison.</Original>
-                <Russian>Статические члены экипажа, пленные, беженцы, Петрос или неизвестные юниты не могут быть добавлены ни в один гарнизон.</Russian>
-                <Chinesesimp>机组、囚犯、难民、Petros或未知单位不能添加到任何驻军。</Chinesesimp>
+                <Original>Static crewmen, prisoners, refugees, Field Commander or unknown units can can't be added to any garrison.</Original>
+                <Russian>Статические члены экипажа, пленные, беженцы, Полевой командир или неизвестные юниты не могут быть добавлены ни в один гарнизон.</Russian>
+                <Chinesesimp>机组、囚犯、难民、Field Commander或未知单位不能添加到任何驻军。</Chinesesimp>
                 <Korean>고정화기 사수, 죄수, 난민, 페트로스 또는 알려지지 않은 부대는 어떤 주둔지에도 추가될 수 없습니다.</Korean>
             </Key>
             <Key ID="STR_garrison_error_add_to_garrison">
@@ -4055,6 +4093,60 @@
                 <Russian>Включить Mag Repack?</Russian>
                 <Chinesesimp>启用Mag Repack？</Chinesesimp>
                 <Korean>탄약 재포장을 활성화합니까?</Korean>
+            </Key>
+            <Key ID="STR_params_rebuildassets">
+                <Original>Rebuild Assets Cost</Original>
+                <Russian>Стоимость восстановления разрушенных построек</Russian>
+                <Chinesesimp>Rebuild Assets Cost</Chinesesimp>
+                <Korean>Rebuild Assets Cost</Korean>
+            </Key>
+            <Key ID="STR_params_cleanforest">
+                <Original>Radius of tree clearing ability</Original>
+                <Russian>Радиус способности очистки деревьев</Russian>
+                <Chinesesimp>Radius of tree clearing ability</Chinesesimp>
+                <Korean>Radius of tree clearing ability</Korean>
+            </Key>
+            <Key ID="STR_params_blackmarketprice">
+                <Original>Cost of Black Market vehicles</Original>
+                <Russian>Стоимость техники на черном рынке</Russian>
+                <Chinesesimp>Cost of Black Market vehicles</Chinesesimp>
+                <Korean>Cost of Black Market vehicles</Korean>
+            </Key>
+            <Key ID="STR_params_blackmarketgunprice">
+                <Original>Cost of Black Market guns and equipment</Original>
+                <Russian>Стоимость оружия и снаряжения на черном рынке</Russian>
+                <Chinesesimp>Cost of Black Market guns and equipment</Chinesesimp>
+                <Korean>Cost of Black Market guns and equipment</Korean>
+            </Key>
+            <Key ID="STR_params_blackmarketpriceverylow">
+                <Original>Very Low</Original>
+                <Russian>Очень низкая</Russian>
+                <Chinesesimp>Very Low</Chinesesimp>
+                <Korean>Very Low</Korean>
+            </Key>
+            <Key ID="STR_params_blackmarketpricelow">
+                <Original>Low</Original>
+                <Russian>Низкая</Russian>
+                <Chinesesimp>Low</Chinesesimp>
+                <Korean>Low</Korean>
+            </Key>
+            <Key ID="STR_params_blackmarketpricemed">
+                <Original>Normal</Original>
+                <Russian>Средняя</Russian>
+                <Chinesesimp>Normal</Chinesesimp>
+                <Korean>Normal</Korean>
+            </Key>
+            <Key ID="STR_params_blackmarketpricehigh">
+                <Original>High</Original>
+                <Russian>Высокая</Russian>
+                <Chinesesimp>High</Chinesesimp>
+                <Korean>High</Korean>
+            </Key>
+            <Key ID="STR_params_blackmarketpriceveryhigh">
+                <Original>Very High</Original>
+                <Russian>Очень Высокая</Russian>
+                <Chinesesimp>Very High</Chinesesimp>
+                <Korean>Very High</Korean>
             </Key>
             <Key ID="STR_params_playerIcons">
                 <Original>Show 3D icons above unconscious players?</Original>
@@ -6828,10 +6920,16 @@
         </Container>
         <Container name="credits_generic">
             <Key ID="STR_antistasi_credits_authors_plus">
-                <Original>Antistasi Plus Authors:</Original>
-                <Russian>Авторы Antistasi Plus:</Russian>
-                <Chinesesimp>Antistasi Plus 作者：</Chinesesimp>
-                <Korean>안티스타시 플러스 제작자:</Korean>
+                <Original>Antistasi VLK Factions Author:</Original>
+                <Russian>Автор Antistasi VLK Factions:</Russian>
+                <Chinesesimp>VLK Factions Author:</Chinesesimp>
+                <Korean>VLK Factions Author:</Korean>
+            </Key>
+            <Key ID="STR_antistasi_credits_special">
+                <Original>Special Thanks:</Original>
+                <Russian>Спасибо за помощь:</Russian>
+                <Chinesesimp>Special Thanks:</Chinesesimp>
+                <Korean>Special Thanks:</Korean>
             </Key>
             <Key ID="STR_antistasi_credits_authors">
                 <Original>Antistasi Authors:</Original>
@@ -7276,15 +7374,15 @@
         </Container>
         <Container name="tasks">
             <Key ID="STR_tasks_attackHq_header">
-                <Original>Defend Petros</Original>
-                <Russian>Защитить Петроса</Russian>
-                <Chinesesimp>保卫Petros</Chinesesimp>
+                <Original>Defend Field Commander</Original>
+                <Russian>Защитить Полевого командира</Russian>
+                <Chinesesimp>保卫Field Commander</Chinesesimp>
                 <Korean>페트로스 보호</Korean>
             </Key>
             <Key ID="STR_tasks_attackHq_desc">
-                <Original>The enemy has sent SpecOps to find Petros. Stop them, or move the HQ before they get here.</Original>
-                <Russian>Враг отправил отряд спецназа с задачей найти и устранить Петроса. Остановите их или передвиньте штаб в безопасное место пока они нас не нашли.</Russian>
-                <Chinesesimp>敌人派出特遣队去寻找并消灭Petros。 在他们找到我们之前阻止他们或将总部转移到安全地点。</Chinesesimp>
+                <Original>The enemy has sent SpecOps to find Field Commander. Stop them, or move the HQ before they get here.</Original>
+                <Russian>Враг отправил отряд спецназа с задачей найти и устранить Полевого командира. Остановите их или передвиньте штаб в безопасное место пока они нас не нашли.</Russian>
+                <Chinesesimp>敌人派出特遣队去寻找并消灭Field Commander。 在他们找到我们之前阻止他们或将总部转移到安全地点。</Chinesesimp>
                 <Korean>적들이 페트로스를 찾기 위해 특수부대를 보냈습니다. 그들을 막거나, 그들이 오기 전에 본부를 옮기십시오.</Korean>
             </Key>
             <Key ID="STR_RIV_ATT_cell_header">
@@ -7854,9 +7952,9 @@
                 <Korean>인공지능 유닛 빙의</Korean>
             </Key>
             <Key ID="STR_control_unit_error_petros">
-                <Original>You can't control Petros.</Original>
-                <Russian>Вы не можете управлять Петросом.</Russian>
-                <Chinesesimp>你无法控制 Petros。</Chinesesimp>
+                <Original>You can't control Field Commander.</Original>
+                <Russian>Вы не можете управлять Полевым командиром.</Russian>
+                <Chinesesimp>你无法控制 Field Commander。</Chinesesimp>
                 <Korean>페트로스는 조종할 수 없습니다.</Korean>
             </Key>
             <Key ID="STR_control_unit_error_undercover">
@@ -10608,15 +10706,15 @@
                 <Korean>아스널 재고는 비어 있어야 합니다.</Korean>
             </Key>
             <Key ID="STR_A3A_Base_canMoveHq_arsenal_petros_picked">
-                <Original>Put Petros down before you move the HQ!</Original>
-                <Russian>Положите Петроса на место прежде чем двигать штаб!</Russian>
-                <Chinesesimp>搬总部之前先把Petros放下！</Chinesesimp>
+                <Original>Put Field Commander down before you move the HQ!</Original>
+                <Russian>Положите Полевого командира на место прежде чем двигать штаб!</Russian>
+                <Chinesesimp>搬总部之前先把Field Commander放下！</Chinesesimp>
                 <Korean>본부를 옮기기 전에 백두로를 내려놓으십시오!</Korean>
             </Key>
             <Key ID="STR_A3A_Base_canMoveHq_arsenal_petros_picked_2">
-                <Original>Petros currently picked up</Original>
-                <Russian>Петрос в настоящее время поднят</Russian>
-                <Chinesesimp>Petros目前正被拾起</Chinesesimp>
+                <Original>Field Commander currently picked up</Original>
+                <Russian>Полевой командир в настоящее время поднят</Russian>
+                <Chinesesimp>Field Commander目前正被拾起</Chinesesimp>
                 <Korean>페트로스는 현재 픽업되고 있습니다</Korean>
             </Key>
             <Key ID="STR_A3A_Base_commsMp_download_error">
