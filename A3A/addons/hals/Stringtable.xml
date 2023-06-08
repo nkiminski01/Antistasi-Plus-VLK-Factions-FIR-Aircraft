@@ -22,6 +22,69 @@
             <Chinesesimp>手枪</Chinesesimp>
             <Korean>권총</Korean>
         </Key>
+        <Key ID="STR_HALS_HANDGUNSMAGS">
+            <Original>Handguns Magazines</Original>
+            <German>Handguns Magazines</German>
+            <Russian>Магазины для пистолетов</Russian>
+            <Chinesesimp>Handguns Magazines</Chinesesimp>
+            <Korean>Handguns Magazines</Korean>
+        </Key>
+        <Key ID="STR_HALS_RIFLMAGS">
+            <Original>Assault Rifles Magazines</Original>
+            <German>Assault Rifles Magazines</German>
+            <Russian>Магазины для штурмовых винтовок</Russian>
+            <Chinesesimp>Assault Rifles Magazines</Chinesesimp>
+            <Korean>Assault Rifles Magazines</Korean>
+        </Key>
+        <Key ID="STR_HALS_O_LAUNCH">
+            <Original>Sights (Launchers)</Original>
+            <German>Sights (Launchers)</German>
+            <Russian>Прицелы (Пусковые установки)</Russian>
+            <Chinesesimp>Sights (Launchers)</Chinesesimp>
+            <Korean>Sights (Launchers)</Korean>
+        </Key>
+        <Key ID="STR_HALS_O_COLIM">
+            <Original>Sights (Short Range)</Original>
+            <German>Sights (Short Range)</German>
+            <Russian>Прицелы (Ближние дистанции)</Russian>
+            <Chinesesimp>Sights (Short Range)</Chinesesimp>
+            <Korean>Sights (Short Range)</Korean>
+        </Key>
+        <Key ID="STR_HALS_O_MIDR">
+            <Original>Sights (Middle Range)</Original>
+            <German>Sights (Middle Range)</German>
+            <Russian>Прицелы (Средние дистанции)</Russian>
+            <Chinesesimp>Sights (Middle Range)</Chinesesimp>
+            <Korean>Sights (Middle Range)</Korean>
+        </Key>
+        <Key ID="STR_HALS_O_LROP">
+            <Original>Sights (Long Range)</Original>
+            <German>Sights (Long Range)</German>
+            <Russian>Прицелы (Дальние дистанции)</Russian>
+            <Chinesesimp>Sights (Long Range)</Chinesesimp>
+            <Korean>Sights (Long Range)</Korean>
+        </Key>
+        <Key ID="STR_HALS_SNIPMAGS">
+            <Original>Sniper Rifles Magazines</Original>
+            <German>Sniper Rifles Magazines</German>
+            <Russian>Магазины для снайперских винтовок</Russian>
+            <Chinesesimp>Sniper Rifles Magazines</Chinesesimp>
+            <Korean>Sniper Rifles Magazines</Korean>
+        </Key>
+        <Key ID="STR_HALS_O_TWNWS">
+            <Original>Sights (TV/NV)</Original>
+            <German>Sights (TV/NV)</German>
+            <Russian>Прицелы (Ночные и тепловизионные)</Russian>
+            <Chinesesimp>Sights (TV/NV)</Chinesesimp>
+            <Korean>Sights (TV/NV)</Korean>
+        </Key>            
+        <Key ID="STR_HALS_GRENADES">
+            <Original>Underbarrel and Hand Grenades</Original>
+            <German>Underbarrel and Hand Grenades</German>
+            <Russian>Подствольные и ручные гранаты</Russian>
+            <Chinesesimp>Underbarrel and Hand Grenades</Chinesesimp>
+            <Korean>Underbarrel and Hand Grenades</Korean>
+        </Key>
         <Key ID="STR_HALS_STORE_LAUNCHERS">
             <Original>Launchers</Original>
             <German>Trägerraketen</German>
@@ -30,18 +93,39 @@
             <Korean>발사기</Korean>
         </Key>
         <Key ID="STR_HALS_STORE_LAUNCHER_AMMO">
-            <Original>Launcher Ammunition</Original>
+            <Original>Launchers Ammunition</Original>
             <German>Launcher-Munition</German>
-            <Russian>Боеприпасы для пусковых установок, РПГ</Russian>
+            <Russian>Боеприпасы для пусковых установок</Russian>
             <Chinesesimp>发射器弹药</Chinesesimp>
             <Korean>발사기 탄약</Korean>
         </Key>
         <Key ID="STR_HALS_STORE_SMGS">
-            <Original>Submachine Guns</Original>
-            <German>Maschinenpistole</German>
+            <Original>SMGs</Original>
+            <German>SMGs</German>
             <Russian>Пистолеты-пулемёты</Russian>
-            <Chinesesimp>冲锋枪</Chinesesimp>
-            <Korean>기관단총</Korean>
+            <Chinesesimp>SMGs</Chinesesimp>
+            <Korean>SMGs</Korean>
+        </Key>
+        <Key ID="STR_HALS_STORE_MGSMAG">
+            <Original>Machine Guns Magazines</Original>
+            <German>Machine Guns Magazines</German>
+            <Russian>Магазины для пулеметов</Russian>
+            <Chinesesimp>Machine Guns Magazines</Chinesesimp>
+            <Korean>Machine Guns Magazines</Korean>
+        </Key>
+        <Key ID="STR_HALS_STORE_SMGSMAG">
+            <Original>SMGs Magazines</Original>
+            <German>SMGs Magazines</German>
+            <Russian>Магазины для ПП</Russian>
+            <Chinesesimp>SMGs Magazines</Chinesesimp>
+            <Korean>SMGs Magazines</Korean>
+        </Key>
+        <Key ID="STR_HALS_SHOTGMAGS">
+            <Original>Shotguns Shells</Original>
+            <German>Shotguns Shells</German>
+            <Russian>Патроны для дробовиков</Russian>
+            <Chinesesimp>Shotguns Shells</Chinesesimp>
+            <Korean>Shotguns Shells</Korean>
         </Key>
         <Key ID="STR_HALS_STORE_MISC">
             <Original>Misc</Original>
@@ -50,6 +134,27 @@
             <Chinesesimp>杂项</Chinesesimp>
             <Korean>기타</Korean>
         </Key>
+        <Key ID="STR_HALS_STORE_ION">
+            <Original>Faction "PMC ION"</Original>
+            <German>Faction "PMC ION"</German>
+            <Russian>Фракция "ЧВК ION"</Russian>
+            <Chinesesimp>Faction "PMC ION"</Chinesesimp>
+            <Korean>Faction "PMC ION"</Korean>
+        </Key>
+        <Key ID="STR_HALS_STORE_GB">
+            <Original>Faction "Green Berets"</Original>
+            <German>Faction "Green Berets"</German>
+            <Russian>Фракция "Зелёные Береты"</Russian>
+            <Chinesesimp>Faction "Green Berets"</Chinesesimp>
+            <Korean>Faction "Green Berets"</Korean>
+        </Key>
+        <Key ID="STR_HALS_STORE_VSRF">
+            <Original>Faction "AFRF"</Original>
+            <German>Faction "AFRF"</German>
+            <Russian>Фракция "ВСРФ"</Russian>
+            <Chinesesimp>Faction "AFRF"</Chinesesimp>
+            <Korean>Faction "AFRF"</Korean>
+        </Key>        
         <Key ID="STR_HALS_ASSAULT_RIFLES_VN">
             <Original>Assault Rifles, Carbines</Original>
             <German>Sturmgewehre, Karabiner</German>
@@ -93,11 +198,18 @@
             <Korean>내비게이션</Korean>
         </Key>
         <Key ID="STR_HALS_SRS">
-            <Original>DMRs, Sniper Rifles, Battle Rifles</Original>
-            <German>Scharfschützengewehre</German>
-            <Russian>Снайперские, самозарядные винтовки</Russian>
-            <Chinesesimp>DMR、狙击步枪、精确步枪</Chinesesimp>
-            <Korean>지정사수소총, 저격소총, 전투소총</Korean>
+            <Original>Sniper and Combat Rifles</Original>
+            <German>Sniper and Combat Rifles</German>
+            <Russian>Снайперские и боевые винтовки</Russian>
+            <Chinesesimp>Sniper and Combat Rifles</Chinesesimp>
+            <Korean>Sniper and Combat Rifles</Korean>
+        </Key>
+        <Key ID="STR_HALS_SHOTS">
+            <Original>Shotguns</Original>
+            <German>Shotguns</German>
+            <Russian>Дробовики</Russian>
+            <Chinesesimp>Shotguns</Chinesesimp>
+            <Korean>Shotguns</Korean>
         </Key>
         <Key ID="STR_HALS_MAGS">
             <Original>Magazines</Original>
