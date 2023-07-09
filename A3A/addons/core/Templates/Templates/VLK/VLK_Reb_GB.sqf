@@ -220,6 +220,16 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
     ["CUP_B_M163_Vulcan_USA", 4600*ArmsDealerPrice, "AA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],        
     ["RHS_M6_wd", 6000*ArmsDealerPrice, "AA", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
     ["RHS_M6", 6000*ArmsDealerPrice, "AA", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}}],
+    
+    ["pook_P15M_Base_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA3_radar_base_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA3_static_root_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_76N6_radarCHDKZ_INDFOR", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_30N6E2_mast_IND", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA20_static_base_IND", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_ANMPQ50_root", 15000, "STATICAA", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["POOK_ANMPQ53_Base", 30000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_MIM104_PAC3_Base", 30000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
 
     ["CUP_B_USMC_DYN_MQ9", 7000*ArmsDealerPrice, "PLANE", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
     ["B_UAV_05_F", 8000*ArmsDealerPrice, "PLANE", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],

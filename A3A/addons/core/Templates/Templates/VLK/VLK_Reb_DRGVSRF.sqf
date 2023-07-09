@@ -104,6 +104,16 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
     ["rhs_D30_at_msv", 2000*ArmsDealerPrice, "ARTILLERY", {tierWar > 4}],
     ["rhs_D30_msv", 5000*ArmsDealerPrice, "ARTILLERY", {tierWar > 5}],
 
+    ["pook_P15M_Base_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA3_radar_base_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA3_static_root_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_76N6_radarCHDKZ_INDFOR", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_30N6E2_mast_IND", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA20_static_base_IND", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_ANMPQ50_root", 15000, "STATICAA", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["POOK_ANMPQ53_Base", 30000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_MIM104_PAC3_Base", 30000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+
     ["rhs_tigr_m_msv", 500*ArmsDealerPrice, "CAR", {true}],
     ["CUP_O_GAZ_Vodnik_Unarmed_RU", 500*ArmsDealerPrice, "CAR", {true}],
     ["rhs_tigr_sts_msv", 750*ArmsDealerPrice, "CAR", {tierWar > 2}],

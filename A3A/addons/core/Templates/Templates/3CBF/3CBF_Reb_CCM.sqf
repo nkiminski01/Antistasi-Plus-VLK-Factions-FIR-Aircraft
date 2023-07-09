@@ -125,6 +125,15 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 
 ["blackMarketStock", [
     ["rhsgref_nat_Igla_AA_pod", 3000, "STATICAA", {tierWar > 3}],
+    ["pook_P15M_Base_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA3_radar_base_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA3_static_root_IND", 10000, "STATICAA", {tierWar > 4 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_76N6_radarCHDKZ_INDFOR", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_30N6E2_mast_IND", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_SA20_static_base_IND", 20000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_ANMPQ50_root", 15000, "STATICAA", {tierWar > 5 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["POOK_ANMPQ53_Base", 30000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
+    ["pook_MIM104_PAC3_Base", 30000, "STATICAA", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count seaports > 0}}],
     ["UK3CB_LNM_I_Metis", 3000, "STATICAT", {tierWar > 3}],
     ["rhsgref_nat_AGS30_TriPod", 3000, "STATICMG", {tierWar > 3}],
 
@@ -149,6 +158,8 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
     
     ["UK3CB_KDF_I_MTLB_ZU23", 7000, "AA", {tierWar > 3}],
     ["UK3CB_I_G_ZsuTank", 7500, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
+    ["pook_ZSUM4_base_IND", 10000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
+    ["pook_96K6_root_IND", 21000, "AA", {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count (milbases + airportsX) > 0}],
 
     ["UK3CB_KDF_I_MIG21_CAS", 35000, "PLANE", {tierWar > 6 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
     ["Tornado_AWS_ADV_IND", 40000, "PLANE", {tierWar > 7 && {{sidesX getVariable [_x,sideUnknown] isEqualTo teamPlayer} count airportsX > 0}}],
